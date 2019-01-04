@@ -1,0 +1,14 @@
+/* ==========================================================================
+   Includes
+   ========================================================================== */
+
+@import "mixins";
+@import "generic/section";
+@import "generic/background";
+@import "generic/alignment";
+@import "generic/padding";
+
+.gutenberg-section {
+    transform: translateY(-16px);
+    margin-bottom: -32px;
+}

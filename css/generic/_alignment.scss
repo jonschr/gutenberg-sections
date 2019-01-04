@@ -1,0 +1,28 @@
+.gutenberg-section {
+    .content-wrap {
+        margin: 0 auto;
+        max-width: $content_width;
+        position: relative;
+        z-index: 20;
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+
+        > :first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+/* ==========================================================================
+   Align wide should inherit the alignfull styles when not on desktop
+   ========================================================================== */
+
+.gutenberg-section.alignwide {
+    @include notdesktop {
+        margin-left: calc(-100vw / 2 + 100% / 2);
+        margin-right: calc(-100vw / 2 + 100% / 2);
+        max-width: 100vw;
+    }
+}
