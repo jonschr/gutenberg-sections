@@ -10,5 +10,54 @@
 
 .gutenberg-section {
     transform: translateY(-16px);
+    margin-bottom: -31px;
+}
+
+.acf-block-body.is-edit {
+    padding: 20px;
+    border: 10px solid rgba(#4ab866, 0.2);
+    transform: translateY(-16px);
     margin-bottom: -32px;
+    transition: .5s border-color ease;
+
+    &:hover {
+        // border-color: #eff9f1;
+        border-color: rgba(#4ab866, 0.5);
+    }
+
+    .acf-tab-group {
+        padding-left: 10px;
+
+        // padding-top: 10px;
+   
+    }
+
+    .acf-block-fields {
+        border: none;
+    }
+
+    > .acf-tab-wrap {
+        background: transparent;
+    }
+
+    .acf-label.acf-accordion-title {
+        label {
+            font-size: 20px;
+        }
+    }
+
+    .acf-field .acf-label {
+        label {
+            font-weight: normal;
+            font-size: 16px;
+        }
+    }
+
+    .acf-field.acf-accordion .acf-accordion-title {
+        padding: 17px !important;
+    }
+
+    .acf-field .acf-input > p.description {
+        font-size: 15px;
+    }
 }

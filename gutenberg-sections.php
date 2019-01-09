@@ -31,6 +31,12 @@ define( 'GUTENBERG_SECTIONS', dirname( __FILE__ ) );
 // Define the version of the plugin
 define ( 'GUTENBERG_SECTIONS_VERSION', '0.1' );
 
+////////////////////////
+// FIELD REGISTRATION //
+////////////////////////
+
+require_once( 'field-registration/fullwidth.php' );
+
 //////////////////
 // BLOCKS SETUP //
 //////////////////
@@ -62,7 +68,12 @@ function init_blocks() {
             'render_callback'   => 'gs_render',
             'category'          => 'layout',
             'icon'              => 'tagcloud',
+            'mode'              => 'edit',
+            'align'             => 'full',
             'keywords'          => array( 'full', 'fullwidth', 'full-width' ),
+            'supports'          => array(
+                'align' =>  array( 'full', 'wide'),
+            ),
         )
     );
 }
