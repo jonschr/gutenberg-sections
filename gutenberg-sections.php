@@ -4,7 +4,7 @@
 	Plugin URI: https://elod.in
     GitHub Plugin URI: https://github.com/jonschr/gutenberg-plates
     Description: Preset layouts for Gutenberg, using ACF for rendering
-	Version: 0.2.1
+	Version: 0.2.2
     Author: Jon Schroeder
     Author URI: https://elod.in
 
@@ -29,7 +29,7 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'GUTENBERG_SECTIONS', dirname( __FILE__ ) );
 
 // Define the version of the plugin
-define ( 'GUTENBERG_SECTIONS_VERSION', '0.2.1' );
+define ( 'GUTENBERG_SECTIONS_VERSION', '0.2.2' );
 
 /////////////////
 // IMAGE SIZES //
@@ -57,6 +57,9 @@ require_once( 'field-registration/fullwidth.php' );
 //////////////////
 // BLOCKS SETUP //
 //////////////////
+
+require_once( 'blocks/common-styles.php' );
+require_once( 'blocks/common-classes.php' );
 
 add_action('acf/init', 'init_blocks');
 function init_blocks() {
