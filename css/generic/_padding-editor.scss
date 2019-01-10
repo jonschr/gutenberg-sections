@@ -1,0 +1,21 @@
+.gutenberg-section {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    @include desktop {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+
+    @include tablet {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+
+    @include mobile {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}

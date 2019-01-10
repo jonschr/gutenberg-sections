@@ -1,0 +1,17 @@
+.acf-image-uploader {
+    .hide-if-value {
+        padding: 20px;
+        border: 1px solid #ddd;
+        text-align: center;
+        background: #efefef;
+        border-radius: 3px;
+
+        p {
+            font-size: 15px;
+
+            .acf-button {
+                margin-left: 5px;
+            }
+        }
+    }
+}

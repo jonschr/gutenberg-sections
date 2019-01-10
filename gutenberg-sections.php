@@ -4,7 +4,7 @@
 	Plugin URI: https://elod.in
     GitHub Plugin URI: https://github.com/jonschr/gutenberg-plates
     Description: Preset layouts for Gutenberg, using ACF for rendering
-	Version: 0.2
+	Version: 0.2.1
     Author: Jon Schroeder
     Author URI: https://elod.in
 
@@ -29,12 +29,29 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'GUTENBERG_SECTIONS', dirname( __FILE__ ) );
 
 // Define the version of the plugin
-define ( 'GUTENBERG_SECTIONS_VERSION', '0.2' );
+define ( 'GUTENBERG_SECTIONS_VERSION', '0.2.1' );
+
+/////////////////
+// IMAGE SIZES //
+/////////////////
+
+// Add an image size for the editor
+add_image_size( 'editor-thumb-wide', 300, 150, true );
+
+// Add an image size for the frontend
+add_image_size( 'section-background', 1800, 1000, true );
 
 ////////////////////////
 // FIELD REGISTRATION //
 ////////////////////////
 
+// Set up the default fields
+require_once( 'field-registration/default_groups/default_content.php' );
+require_once( 'field-registration/default_groups/default_alignment.php' );
+require_once( 'field-registration/default_groups/default_layout.php' );
+require_once( 'field-registration/default_groups/default_color.php' );
+
+// Register the fields
 require_once( 'field-registration/fullwidth.php' );
 
 //////////////////
@@ -47,30 +64,19 @@ function init_blocks() {
     // bail if ACF isn't active
     if( !function_exists( 'acf_register_block' ) )
         return;
-        
-    // // register a testimonial block
-    // acf_register_block(array(
-    //     'name'              => 'testimonial',
-    //     'title'             => __('My Testimonial'),
-    //     'description'       => __(''),
-    //     'render_callback'   => 'gs_render',
-    //     'category'          => 'formatting',
-    //     'icon'              => 'admin-comments',
-    //     'keywords'          => array( 'testimonial' ),
-    // ));
 
     // register a fullwidth block
     acf_register_block(
         array(
             'name'              => 'fullwidth',
             'title'             => __( 'Fullwidth' ),
-            'description'       => __( 'A fullwidth section, with support for background images and colors behind grouped paragraphs, headings, etc.' ),
+            'description'       => __( 'A fullwidth wrapper section, with support for background images and colors behind grouped paragraphs, headings, etc.' ),
             'render_callback'   => 'gs_render',
             'category'          => 'layout',
             'icon'              => 'tagcloud',
             'mode'              => 'edit',
             'align'             => 'full',
-            'keywords'          => array( 'full', 'fullwidth', 'full-width' ),
+            'keywords'          => array( 'full', 'fullwidth', 'full-width', 'wrapper' ),
             'supports'          => array(
                 'align' =>  array( 'full', 'wide'),
             ),
@@ -78,6 +84,10 @@ function init_blocks() {
     );
 }
 
+/**
+ * Render the block
+ * This is a global function, which should handle rendering for all blocks
+ */
 function gs_render( $block ) {
   
     // convert name ("acf/testimonial") into path friendly slug ("testimonial")

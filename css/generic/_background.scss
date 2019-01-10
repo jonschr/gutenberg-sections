@@ -1,6 +1,15 @@
 .gutenberg-section {}
 
 .gutenberg-section.has-background-image {
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    li {
+        color: white;
+    }
+
     .background-image {
         display: block;
         position: absolute;
