@@ -4,7 +4,7 @@
 	Plugin URI: https://elod.in
     GitHub Plugin URI: https://github.com/jonschr/gutenberg-plates
     Description: Preset layouts for Gutenberg, using ACF for rendering
-	Version: 0.2.2
+	Version: 0.2.3
     Author: Jon Schroeder
     Author URI: https://elod.in
 
@@ -29,7 +29,7 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'GUTENBERG_SECTIONS', dirname( __FILE__ ) );
 
 // Define the version of the plugin
-define ( 'GUTENBERG_SECTIONS_VERSION', '0.2.2' );
+define ( 'GUTENBERG_SECTIONS_VERSION', '0.2.3' );
 
 /////////////////
 // IMAGE SIZES //
@@ -54,6 +54,23 @@ require_once( 'field-registration/default_groups/default_color.php' );
 // Register the fields
 require_once( 'field-registration/fullwidth.php' );
 
+/////////////////////////////
+// REGISTER BLOCK CATEGORY //
+/////////////////////////////
+
+add_filter( 'block_categories', 'gs_add_block_category', 10, 2);
+function gs_add_block_category( $categories, $post ) {
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug' => 'sections',
+                'title' => __( 'Sections', 'gutenberg-sections' ),
+            ),
+        )
+    );
+}
+
 //////////////////
 // BLOCKS SETUP //
 //////////////////
@@ -75,13 +92,13 @@ function init_blocks() {
             'title'             => __( 'Fullwidth' ),
             'description'       => __( 'A fullwidth wrapper section, with support for background images and colors behind grouped paragraphs, headings, etc.' ),
             'render_callback'   => 'gs_render',
-            'category'          => 'layout',
+            'category'          => 'sections',
             'icon'              => 'tagcloud',
             'mode'              => 'edit',
             'align'             => 'full',
             'keywords'          => array( 'full', 'fullwidth', 'full-width', 'wrapper' ),
             'supports'          => array(
-                'align' =>  array( 'full', 'wide'),
+                'align' =>  array( 'full', 'wide' ),
             ),
         )
     );

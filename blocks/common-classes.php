@@ -11,6 +11,16 @@ function gs_common_classes( $block ) {
 	$align_class = $block['align'] ? 'align' . $block['align'] : '';
 	array_push( $classes, $align_class );
 
+	// full-height
+	$fullheight = get_field( 'fullheight' );
+	if ( $fullheight == 1 )
+		array_push( $classes, 'full-height' );
+
+	// fixed background
+	$fixed_position_background = get_field( 'fixed_position_background' );
+	if ( $fixed_position_background == 1 )
+		array_push( $classes, 'fixed-position-background' );
+
 	// create background class
 	$background_image = get_field( 'background_image' );
 	
