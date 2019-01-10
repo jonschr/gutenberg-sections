@@ -1,0 +1,140 @@
+.gutenberg-section.video {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    background: black;
+
+    @include mobile {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+
+    .wrap {
+        position: relative;
+        transform: translate(0%, 0%);
+        top: auto;
+        left: auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    li,
+    p {
+        color: white;
+    }
+
+    *::-webkit-media-controls-start-playback-button {
+        display: none !important;
+        -webkit-appearance: none;
+    }
+
+    > video {
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+
+        @media (min-aspect-ratio: 16 / 9) {
+            height: 300%;
+            top: -100%;
+        }
+
+        @media (max-aspect-ratio: 16 / 9) {
+            width: 300%;
+            left: -100%;
+        }
+
+        //* If supporting object-fit, overriding the more manual way:
+        @supports (object-fit: cover) {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &.full-color > video {
+        opacity: 1;
+    }
+}
+
+/*
+   Colors
+   ========================================================================== */
+// .section.background_video:after {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     width: 100%;
+//     background-color: black;
+//     z-index: 0;
+// }
+
+/*
+   Limit-height
+   ========================================================================== */
+
+.section.background_video {
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    @include mobile {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+
+    .wrap {
+        position: relative;
+        transform: translate(0%, 0%);
+        top: auto;
+        left: auto;
+    }
+}
+
+/* ==========================================================================
+   Full height
+   ========================================================================== */
+
+.section-gutenberg.background_video.full-height {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100vh;
+
+    @include mobile {
+        height: auto;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+
+    .wrap {
+        position: absolute;
+        z-index: 10;
+        color: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include mobile {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: none;
+        }
+    }
+}

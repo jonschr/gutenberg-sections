@@ -74,7 +74,7 @@ function gs_add_default_color( $key, $prefix ) {
 			'key' => $prefix . 'iAG44q2khq72Brc',
 			'label' => 'Background color opacity',
 			'name' => 'background_color_opacity',
-			'type' => 'range',
+			'type' => 'number',
 			'parent' => $key,
 			'instructions' => '',
 			'required' => 0,

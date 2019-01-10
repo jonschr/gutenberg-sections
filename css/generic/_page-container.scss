@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Remove the padding on a default genesis site on the default template
+   ========================================================================== */
+
+body.page-template-default.full-width-content {
+    .site-inner {
+        padding-top: 0;
+    }
+
+    main.content {
+        > .page {
+            margin-bottom: 0;
+
+            > .entry-header {
+                padding-top: 50px;
+            }
+        }
+    }
+}

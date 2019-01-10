@@ -4,7 +4,7 @@
 	Plugin URI: https://elod.in
     GitHub Plugin URI: https://github.com/jonschr/gutenberg-plates
     Description: Preset layouts for Gutenberg, using ACF for rendering
-	Version: 0.2.3
+	Version: 0.3
     Author: Jon Schroeder
     Author URI: https://elod.in
 
@@ -29,7 +29,7 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'GUTENBERG_SECTIONS', dirname( __FILE__ ) );
 
 // Define the version of the plugin
-define ( 'GUTENBERG_SECTIONS_VERSION', '0.2.3' );
+define ( 'GUTENBERG_SECTIONS_VERSION', '0.3' );
 
 /////////////////
 // IMAGE SIZES //
@@ -53,6 +53,7 @@ require_once( 'field-registration/default_groups/default_color.php' );
 
 // Register the fields
 require_once( 'field-registration/fullwidth.php' );
+require_once( 'field-registration/video.php' );
 
 /////////////////////////////
 // REGISTER BLOCK CATEGORY //
@@ -102,6 +103,24 @@ function init_blocks() {
             ),
         )
     );
+
+    // register a fullwidth block
+    acf_register_block(
+        array(
+            'name'              => 'video',
+            'title'             => __( 'Background Video' ),
+            'description'       => __( 'A fullwidth wrapper with background video support.' ),
+            'render_callback'   => 'gs_render',
+            'category'          => 'sections',
+            'icon'              => 'tagcloud',
+            'mode'              => 'edit',
+            'align'             => 'full',
+            'keywords'          => array( 'video', 'fullwidth video', 'background video' ),
+            'supports'          => array(
+                'align' =>  array( 'full', 'wide' ),
+            ),
+        )
+    );
 }
 
 /**
@@ -113,7 +132,6 @@ function gs_render( $block ) {
     // convert name ("acf/testimonial") into path friendly slug ("testimonial")
     $slug = str_replace('acf/', '', $block['name']);
 
-    
     // include a template part from within the "template-parts/block" folder
     if( file_exists( plugin_dir_path( __FILE__ ) . "blocks/content-{$slug}.php" ) ) {
         include( plugin_dir_path( __FILE__ ) . "blocks/content-{$slug}.php" );
