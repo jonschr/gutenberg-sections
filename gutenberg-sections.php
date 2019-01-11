@@ -4,7 +4,7 @@
 	Plugin URI: https://elod.in
     GitHub Plugin URI: https://github.com/jonschr/gutenberg-plates
     Description: Preset layouts for Gutenberg, using ACF for rendering
-	Version: 0.3
+	Version: 0.4
     Author: Jon Schroeder
     Author URI: https://elod.in
 
@@ -29,7 +29,7 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'GUTENBERG_SECTIONS', dirname( __FILE__ ) );
 
 // Define the version of the plugin
-define ( 'GUTENBERG_SECTIONS_VERSION', '0.3' );
+define ( 'GUTENBERG_SECTIONS_VERSION', '0.4' );
 
 /////////////////
 // IMAGE SIZES //
@@ -54,6 +54,7 @@ require_once( 'field-registration/default_groups/default_color.php' );
 // Register the fields
 require_once( 'field-registration/fullwidth.php' );
 require_once( 'field-registration/video.php' );
+require_once( 'field-registration/twocolumn.php' );
 
 /////////////////////////////
 // REGISTER BLOCK CATEGORY //
@@ -104,7 +105,7 @@ function init_blocks() {
         )
     );
 
-    // register a fullwidth block
+    // register a video block
     acf_register_block(
         array(
             'name'              => 'video',
@@ -115,7 +116,25 @@ function init_blocks() {
             'icon'              => 'tagcloud',
             'mode'              => 'edit',
             'align'             => 'full',
-            'keywords'          => array( 'video', 'fullwidth video', 'background video' ),
+            'keywords'          => array( 'video', 'fullwidth video', 'background video', 'wrapper' ),
+            'supports'          => array(
+                'align' =>  array( 'full', 'wide' ),
+            ),
+        )
+    );
+
+    // register a two column block
+    acf_register_block(
+        array(
+            'name'              => 'twocolumn',
+            'title'             => __( 'Two Column' ),
+            'description'       => __( 'A wrapper with support for two-column layouts' ),
+            'render_callback'   => 'gs_render',
+            'category'          => 'sections',
+            'icon'              => 'tagcloud',
+            'mode'              => 'edit',
+            'align'             => 'full',
+            'keywords'          => array( 'two column', '2 column', 'column', 'wrapper', 'twocolumn', '2column' ),
             'supports'          => array(
                 'align' =>  array( 'full', 'wide' ),
             ),

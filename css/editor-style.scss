@@ -11,6 +11,7 @@
 @import "generic/section-spacing-before-after";
 
 @import "sections/video";
+@import "sections/twocolumn";
 
 @import "generic/editor-remove-label-on-main-content";
 @import "generic/editor-image-uploader";
@@ -65,6 +66,6 @@
     }
 
     .acf-field .acf-input > p.description {
-        font-size: 15px;
+        font-size: 13px;
     }
 }

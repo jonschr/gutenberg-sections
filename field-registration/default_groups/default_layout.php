@@ -22,26 +22,6 @@ function gs_add_default_layout( $key, $prefix ) {
 			'multi_expand' => 0,
 			'endpoint' => 0,
 		),
-		// array(
-		// 	'key' => $prefix . 'BJxE6333akWx2ho',
-		// 	'label' => '',
-		// 	'name' => 'use_layout_defaults',
-		// 	'type' => 'true_false',
-		// 	'parent' => $key,
-		// 	'instructions' => '',
-		// 	'required' => 0,
-		// 	'conditional_logic' => 0,
-		// 	'wrapper' => array(
-		// 		'width' => '',
-		// 		'class' => '',
-		// 		'id' => '',
-		// 	),
-		// 	'message' => '',
-		// 	'default_value' => 1,
-		// 	'ui' => 1,
-		// 	'ui_on_text' => 'Use defaults',
-		// 	'ui_off_text' => 'Set manually',
-		// ),
 		array(
 			'key' => $prefix . 'p3X3TnygcGVy864',
 			'label' => 'Full height section',
@@ -54,8 +34,6 @@ function gs_add_default_layout( $key, $prefix ) {
 			'message' => '',
 			'default_value' => 0,
 			'ui' => 1,
-			// 'ui_on_text' => 'Full',
-			// 'ui_off_text' => 'Normal',
 		),
 		array(
 			'key' => $prefix . 'field_5c2f0c882bec1',
@@ -64,15 +42,6 @@ function gs_add_default_layout( $key, $prefix ) {
 			'type' => 'number',
 			'parent' => $key,
 			'instructions' => 'The maximum width in pixels of the inner content',
-			// 'conditional_logic' => array(
-			// 	array(
-			// 		array(
-			// 			'field' => $prefix . 'BJxE6333akWx2ho',
-			// 			'operator' => '!=',
-			// 			'value' => '1',
-			// 		),
-			// 	),
-			// ),
 			'wrapper' => array(
 				'width' => '33.333333',
 				'class' => '',
@@ -93,19 +62,8 @@ function gs_add_default_layout( $key, $prefix ) {
 			'parent' => $key,
 			'instructions' => 'Override the top padding (desktop only)',
 			'required' => 0,
-			// 'conditional_logic' => array(
-			// 	array(
-			// 		array(
-			// 			'field' => $prefix . 'BJxE6333akWx2ho',
-			// 			'operator' => '!=',
-			// 			'value' => '1',
-			// 		),
-			// 	),
-			// ),
 			'wrapper' => array(
 				'width' => '33.333333',
-				'class' => '',
-				'id' => '',
 			),
 			'default_value' => null,
 			'min' => '',
@@ -122,26 +80,62 @@ function gs_add_default_layout( $key, $prefix ) {
 			'parent' => $key,
 			'instructions' => 'Override the bottom padding (desktop only)',
 			'required' => 0,
-			// 'conditional_logic' => array(
-			// 	array(
-			// 		array(
-			// 			'field' => $prefix . 'BJxE6333akWx2ho',
-			// 			'operator' => '!=',
-			// 			'value' => '1',
-			// 		),
-			// 	),
-			// ),
 			'wrapper' => array(
 				'width' => '33.333333',
-				'class' => '',
-				'id' => '',
 			),
 			'default_value' => null,
 			'min' => '',
 			'max' => 300,
 			'step' => 10,
+			'append' => 'px',
+		),
+		array(
+			'key' => $prefix . 'Y7JCPN7E436xVHi',
+			'label' => 'Margin before',
+			'name' => 'margin_before',
+			'type' => 'number',
+			'parent' => $key,
+			'instructions' => 'Spacing above this section',
+			'required' => 0,
+			'wrapper' => array(
+				'width' => '33.333333',
+			),
+			'default_value' => null,
+			'min' => -300,
+			'max' => 300,
 			'prepend' => '',
 			'append' => 'px',
+		),
+		array(
+			'key' => $prefix . 'c2GiB3Vzep89bY7',
+			'label' => 'Margin after',
+			'name' => 'margin_after',
+			'type' => 'number',
+			'parent' => $key,
+			'instructions' => 'Spacing below this section',
+			'required' => 0,
+			'wrapper' => array(
+				'width' => '33.333333',
+			),
+			'default_value' => null,
+			'min' => -300,
+			'max' => 300,
+			'append' => 'px',
+		),
+		array(
+			'key' => $prefix . 't3N2M3pifq8ea7o',
+			'label' => 'Z index',
+			'name' => 'z_index',
+			'type' => 'number',
+			'parent' => $key,
+			'instructions' => 'The layer in which this section appears along the z axis (can appear above or below adjacent sections if one of them has a negative margin)',
+			'required' => 0,
+			'wrapper' => array(
+				'width' => '33.333333',
+			),
+			'default_value' => null,
+			'min' => -1,
+			'max' => 100,
 		),
 	));
 

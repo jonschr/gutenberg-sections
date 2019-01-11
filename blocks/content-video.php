@@ -72,6 +72,6 @@ echo '</section>';
 // Echoes the common styels
 gs_common_styles( $id );
 
-echo '<style>';
+// echo '<style>';
 	// output section-specific styles
-echo '</style>';
+// echo '</style>';

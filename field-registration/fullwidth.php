@@ -6,7 +6,7 @@ function register_section_fullwidth() {
 	$key = 'group_5c2ed4ffa9285';
 	$prefix = 'fullwidth_';
 
-	do_action( 'fullwidth_add_sections', $key, $prefix );
+	do_action( $prefix . 'add_sections', $key, $prefix );
 
 	/**
 	 * Register the fullwidth section

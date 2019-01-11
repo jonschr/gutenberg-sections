@@ -22,17 +22,34 @@ function gs_common_styles( $id ) {
 		/* Top and bottom padding */
 		@media( min-width: 768px ) {
 			#<?php echo $id; ?> {
-		        <?php // if ( get_field( 'use_layout_defaults' ) === false ): ?>
 
-		        	<?php if ( get_field( 'padding_top' ) != '' ): ?>
-				    	padding-top: <?php the_field( 'padding_top' ); ?>px;
-				    <?php endif; ?>
+	        	<?php if ( get_field( 'padding_top' ) != '' ): ?>
+			    	padding-top: <?php the_field( 'padding_top' ); ?>px;
+			    <?php endif; ?>
 
-				    <?php if ( get_field( 'padding_bottom' ) != '' ): ?>
-				    	padding-bottom: <?php the_field( 'padding_bottom' ); ?>px;
-				    <?php endif; ?>
+			    <?php if ( get_field( 'padding_bottom' ) != '' ): ?>
+			    	padding-bottom: <?php the_field( 'padding_bottom' ); ?>px;
+			    <?php endif; ?>
 
-			    <?php // endif; ?>
+			}
+		}
+
+		/* Top and bottom margins */
+		@media( min-width: 768px ) {
+			#<?php echo $id; ?> {
+
+	        	<?php if ( get_field( 'margin_before' ) != '' ): ?>
+			    	margin-top: <?php the_field( 'margin_before' ); ?>px;
+			    <?php endif; ?>
+
+			    <?php if ( get_field( 'margin_after' ) != '' ): ?>
+			    	margin-bottom: <?php the_field( 'margin_after' ); ?>px;
+			    <?php endif; ?>
+
+			    <?php if ( get_field( 'z_index' ) != '' ): ?>
+			    	z-index: <?php the_field( 'z_index' ); ?>;
+			    <?php endif; ?>
+
 			}
 		}
 

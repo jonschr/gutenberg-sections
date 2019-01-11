@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Defaults
+   ========================================================================== */
+
+.gutenberg-section.twocolumn {
+    .content-above {
+        margin-bottom: 35px;
+    }
+
+    .content-below {
+        margin-top: 35px;
+    }
+
+    .content-above,
+    .content-left,
+    .content-right,
+    .content-below {
+        :last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* ==========================================================================
+   Horizontal alignment
+   ========================================================================== */
+
+@include notmobile {
+    .gutenberg-section.twocolumn {
+        .two-column-wrap {
+            display: flex;
+            width: calc( 100% + 40px );
+            margin: 0 -20px;
+
+            .column {
+                flex: 0 1 auto;
+                width: 100%;
+                margin: 0 20px;
+            }
+        }
+
+        &.horizontal-align-half {
+            .two-column-wrap {
+                .column {
+                    width: calc( 100% / 2 - 20px );
+                }
+            }
+        }
+
+        &.horizontal-align-two-one {
+            .two-column-wrap {
+                .content-left {
+                    max-width: calc( 100% / 3 * 2 - 20px );
+                }
+
+                .content-right {
+                    max-width: calc( 100% / 3 * 1 - 20px );
+                }
+            }
+        }
+
+        &.horizontal-align-one-two {
+            .two-column-wrap {
+                .content-left {
+                    max-width: calc( 100% / 3 * 1 - 20px );
+                }
+
+                .content-right {
+                    max-width: calc( 100% / 3 * 2 - 20px );
+                }
+            }
+        }
+
+        &.horizontal-align-auto {
+            .two-column-wrap {
+                .content-left {
+                    width: auto;
+                }
+
+                .content-right {
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+
+/* ==========================================================================
+   Vertical alignment
+   ========================================================================== */
+
+@include notmobile {
+    .gutenberg-section.twocolumn {
+        .two-column-wrap {
+            align-items: center;
+        }
+
+        &.vertical-align-center {
+            .two-column-wrap {
+                // this is already the default
+           
+            }
+        }
+
+        &.vertical-align-top {
+            .two-column-wrap {
+                align-items: flex-start;
+
+                :first-child {
+                    padding-top: 0;
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &.vertical-align-bottom {
+            .two-column-wrap {
+                align-items: flex-end;
+
+                :last-child {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
