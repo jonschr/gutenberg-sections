@@ -1,6 +1,6 @@
 <?php
 
-function gs_add_default_color( $key, $prefix ) {
+function gs_add_default_color_heading( $key, $prefix ) {
 
 	// Color and background
 	acf_add_local_field( array(
@@ -22,6 +22,14 @@ function gs_add_default_color( $key, $prefix ) {
 			'multi_expand' => 0,
 			'endpoint' => 0,
 		),
+	));
+
+}
+
+function gs_add_default_color( $key, $prefix ) {
+
+	// Color and background
+	acf_add_local_field( array(
 		array(
 			'key' => $prefix . 'M3Zsa6XBo3G63Cg',
 			'label' => 'Background image',
@@ -94,7 +102,7 @@ function gs_add_default_color( $key, $prefix ) {
 			'default_value' => '',
 			'min' => '',
 			'max' => 100,
-			'step' => '',
+			'step' => 10,
 			'prepend' => '',
 			'append' => '%',
 		),

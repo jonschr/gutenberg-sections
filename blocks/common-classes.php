@@ -7,6 +7,11 @@ function gs_common_classes( $block ) {
 
 	array_push( $classes, 'gutenberg-section' );
 
+	// create the advanced class
+	$advanced_classes = $block['className'];
+	if ( $advanced_classes )
+		array_push( $classes, $advanced_classes );
+
 	// create align class ("alignwide") from block setting ("wide")
 	$align_class = $block['align'] ? 'align' . $block['align'] : '';
 	array_push( $classes, $align_class );

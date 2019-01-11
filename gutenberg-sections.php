@@ -4,7 +4,7 @@
     Plugin URI: https://elod.in
     GitHub Plugin URI: https://github.com/jonschr/gutenberg-sections
     Description: Preset layouts for Gutenberg, using ACF for rendering
-    Version: 0.4.1
+    Version: 0.4.2
     Author: Jon Schroeder
     Author URI: https://elod.in
 
@@ -29,7 +29,14 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'GUTENBERG_SECTIONS', dirname( __FILE__ ) );
 
 // Define the version of the plugin
-define ( 'GUTENBERG_SECTIONS_VERSION', '0.4.1' );
+define ( 'GUTENBERG_SECTIONS_VERSION', '0.4.2' );
+
+//////////////////////
+// COMMON FUNCTIONS //
+//////////////////////
+
+require_once( 'blocks/common-styles.php' );
+require_once( 'blocks/common-classes.php' );
 
 /////////////////
 // IMAGE SIZES //
@@ -51,7 +58,7 @@ require_once( 'field-registration/default_groups/default_alignment.php' );
 require_once( 'field-registration/default_groups/default_layout.php' );
 require_once( 'field-registration/default_groups/default_color.php' );
 
-// Register the fields
+// Register the fields and set up the acf blocks
 require_once( 'field-registration/fullwidth.php' );
 require_once( 'field-registration/video.php' );
 require_once( 'field-registration/twocolumn.php' );
@@ -73,74 +80,9 @@ function gs_add_block_category( $categories, $post ) {
     );
 }
 
-//////////////////
-// BLOCKS SETUP //
-//////////////////
-
-require_once( 'blocks/common-styles.php' );
-require_once( 'blocks/common-classes.php' );
-
-add_action('acf/init', 'init_blocks');
-function init_blocks() {
-    
-    // bail if ACF isn't active
-    if( !function_exists( 'acf_register_block' ) )
-        return;
-
-    // register a fullwidth block
-    acf_register_block(
-        array(
-            'name'              => 'fullwidth',
-            'title'             => __( 'Fullwidth' ),
-            'description'       => __( 'A fullwidth wrapper section, with support for background images and colors behind grouped paragraphs, headings, etc.' ),
-            'render_callback'   => 'gs_render',
-            'category'          => 'sections',
-            'icon'              => 'tagcloud',
-            'mode'              => 'edit',
-            'align'             => 'full',
-            'keywords'          => array( 'full', 'fullwidth', 'full-width', 'wrapper' ),
-            'supports'          => array(
-                'align' =>  array( 'full', 'wide' ),
-            ),
-        )
-    );
-
-    // register a video block
-    acf_register_block(
-        array(
-            'name'              => 'video',
-            'title'             => __( 'Background Video' ),
-            'description'       => __( 'A fullwidth wrapper with background video support.' ),
-            'render_callback'   => 'gs_render',
-            'category'          => 'sections',
-            'icon'              => 'tagcloud',
-            'mode'              => 'edit',
-            'align'             => 'full',
-            'keywords'          => array( 'video', 'fullwidth video', 'background video', 'wrapper' ),
-            'supports'          => array(
-                'align' =>  array( 'full', 'wide' ),
-            ),
-        )
-    );
-
-    // register a two column block
-    acf_register_block(
-        array(
-            'name'              => 'twocolumn',
-            'title'             => __( 'Two Column' ),
-            'description'       => __( 'A wrapper with support for two-column layouts' ),
-            'render_callback'   => 'gs_render',
-            'category'          => 'sections',
-            'icon'              => 'tagcloud',
-            'mode'              => 'edit',
-            'align'             => 'full',
-            'keywords'          => array( 'two column', '2 column', 'column', 'wrapper', 'twocolumn', '2column' ),
-            'supports'          => array(
-                'align' =>  array( 'full', 'wide' ),
-            ),
-        )
-    );
-}
+/////////////////////
+// BLOCK RENDERING //
+/////////////////////
 
 /**
  * Render the block

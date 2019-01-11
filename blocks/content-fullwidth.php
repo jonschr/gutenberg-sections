@@ -30,6 +30,11 @@ $classes = 'fullwidth ' . $classes;
 // MARKUP //
 ////////////
 
+// // for testing (output all vars)
+// echo '<pre style="font-size: 12px;">';
+// print_r( $block );
+// echo '</pre>';
+
 // Section wrapper
 printf( '<section id="%s" class="%s">', $id, $classes );
 

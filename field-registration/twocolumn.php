@@ -1,11 +1,46 @@
 <?php
 
+//////////////////////////
+// SET UP THE ACF BLOCK //
+//////////////////////////
+
+add_action( 'acf/init', 'init_twocolumn_block' );
+function init_twocolumn_block() {
+    
+    // bail if ACF isn't active
+    if( !function_exists( 'acf_register_block' ) )
+        return;
+
+    // register a two column block
+    acf_register_block(
+        array(
+            'name'              => 'twocolumn',
+            'title'             => __( 'Two Column' ),
+            'description'       => __( 'A wrapper with support for two-column layouts' ),
+            'render_callback'   => 'gs_render',
+            'category'          => 'sections',
+            'icon'              => 'tagcloud',
+            'mode'              => 'edit',
+            'align'             => 'full',
+            'keywords'          => array( 'two column', '2 column', 'column', 'wrapper', 'twocolumn', '2column' ),
+            'supports'          => array(
+                'align' =>  array( 'full', 'wide' ),
+            ),
+        )
+    );
+}
+
+//////////////////////////////
+// REGISTER THE FIELD GROUP //
+//////////////////////////////
+
 add_action( 'after_setup_theme', 'register_section_twocolumn' );
 function register_section_twocolumn() {
 
 	$key = 'group_R8M72ziw6WAm3xz';
 	$prefix = 'twocolumn_';
 
+	// Allow hookable fields
 	do_action( $prefix . 'add_sections', $key, $prefix );
 
 	/**
@@ -32,30 +67,32 @@ function register_section_twocolumn() {
 
 }
 
-// Add each settings group
-add_action( 'twocolumn_add_sections', 'gs_add_custom_content_twocolumn', 10, 2 );
-// add_action( 'twocolumn_add_sections', 'gs_add_default_content', 10, 2 );
-add_action( 'twocolumn_add_sections', 'gs_add_default_alignment', 20, 2 );
-add_action( 'twocolumn_add_sections', 'gs_add_custom_alignment_twocolumn', 21, 2 );
-add_action( 'twocolumn_add_sections', 'gs_add_default_layout', 30, 2 );
-add_action( 'twocolumn_add_sections', 'gs_add_default_color', 40, 2 );
+//////////////////////////////////////////////////
+// DEFINE THE SPECIFIC FIELDS THAT WILL BE USED //
+//////////////////////////////////////////////////
+
+// Content
+add_action( 'twocolumn_add_sections', 'gs_add_default_content_heading', 10, 2 );
+// add_action( 'twocolumn_add_sections', 'gs_add_default_content', 15, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_custom_content_twocolumn', 15, 2 );
+
+// Alignment
+add_action( 'twocolumn_add_sections', 'gs_add_default_alignment_heading', 20, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_alignment', 25, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_custom_alignment_twocolumn', 27, 2 );
+
+// Layout
+add_action( 'twocolumn_add_sections', 'gs_add_default_layout_heading', 30, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_layout', 35, 2 );
+
+// Color
+add_action( 'twocolumn_add_sections', 'gs_add_default_color_heading', 40, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_color', 45, 2 );
 
 function gs_add_custom_content_twocolumn( $key, $prefix ) {
 
 	// Content fields
 	acf_add_local_field(array(
-		array(
-			'key' => $prefix . '28PRxfFX7U4oj4Z',
-			'label' => 'Content',
-			'name' => '',
-			'type' => 'accordion',
-			'parent' => $key,
-			'required' => 0,
-			'conditional_logic' => 0,
-			'open' => 0,
-			'multi_expand' => 0,
-			'endpoint' => 0,
-		),
 		array(
 			'key' => $prefix . 'Q48Wwib6PYrc73a',
 			'label' => '',

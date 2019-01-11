@@ -1,6 +1,6 @@
 <?php
 
-function gs_add_default_layout( $key, $prefix ) {
+function gs_add_default_layout_heading( $key, $prefix ) {
 
 	// Layouts
 	acf_add_local_field( array(
@@ -22,6 +22,14 @@ function gs_add_default_layout( $key, $prefix ) {
 			'multi_expand' => 0,
 			'endpoint' => 0,
 		),
+	));
+
+}
+
+function gs_add_default_layout( $key, $prefix ) {
+
+	// Layouts
+	acf_add_local_field( array(
 		array(
 			'key' => $prefix . 'p3X3TnygcGVy864',
 			'label' => 'Full height section',

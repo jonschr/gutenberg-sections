@@ -1,6 +1,6 @@
 <?php
 
-function gs_add_default_content( $key, $prefix ) {
+function gs_add_default_content_heading( $key, $prefix ) {
 
 	// Content fields
 	acf_add_local_field(array(
@@ -22,6 +22,14 @@ function gs_add_default_content( $key, $prefix ) {
 			'multi_expand' => 0,
 			'endpoint' => 0,
 		),
+	));
+
+}
+
+function gs_add_default_content( $key, $prefix ) {
+
+	// Content fields
+	acf_add_local_field(array(
 		array(
 			'key' => $prefix . 'uwXzbe372nV3Fd4',
 			'label' => '',

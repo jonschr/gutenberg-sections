@@ -1,11 +1,46 @@
 <?php
 
+//////////////////////////
+// SET UP THE ACF BLOCK //
+//////////////////////////
+
+add_action( 'acf/init', 'init_video_block' );
+function init_video_block() {
+    
+    // bail if ACF isn't active
+    if( !function_exists( 'acf_register_block' ) )
+        return;
+
+    // register a video block
+    acf_register_block(
+        array(
+            'name'              => 'video',
+            'title'             => __( 'Background Video' ),
+            'description'       => __( 'A fullwidth wrapper with background video support.' ),
+            'render_callback'   => 'gs_render',
+            'category'          => 'sections',
+            'icon'              => 'tagcloud',
+            'mode'              => 'edit',
+            'align'             => 'full',
+            'keywords'          => array( 'video', 'fullwidth video', 'background video', 'wrapper' ),
+            'supports'          => array(
+                'align' =>  array( 'full', 'wide' ),
+            ),
+        )
+    );
+}
+
+//////////////////////////////
+// REGISTER THE FIELD GROUP //
+//////////////////////////////
+
 add_action( 'after_setup_theme', 'register_section_video' );
 function register_section_video() {
 
 	$key = 'group_pX2DY6oy6F8B9tK';
 	$prefix = 'video_';
 
+	// Allow hookable fields
 	do_action( $prefix . 'add_sections', $key, $prefix );
 
 	/**
@@ -32,16 +67,53 @@ function register_section_video() {
 
 }
 
-// Add each settings group
-add_action( 'video_add_sections', 'gs_add_video_content_fields', 10, 2 );
-add_action( 'video_add_sections', 'gs_add_default_content', 10, 2 );
-add_action( 'video_add_sections', 'gs_add_default_alignment', 20, 2 );
-add_action( 'video_add_sections', 'gs_add_default_layout', 30, 2 );
-// add_action( 'video_add_sections', 'gs_add_default_color', 40, 2 );
-add_action( 'video_add_sections', 'gs_add_video_color_fields', 40, 2 );
+//////////////////////////////////////////////////
+// DEFINE THE SPECIFIC FIELDS THAT WILL BE USED //
+//////////////////////////////////////////////////
+
+// Video Content
+add_action( 'video_add_sections', 'gs_add_video_content_heading', 0, 2 );
+add_action( 'video_add_sections', 'gs_add_video_content', 5, 2 );
+
+// Content
+add_action( 'video_add_sections', 'gs_add_default_content_heading', 10, 2 );
+add_action( 'video_add_sections', 'gs_add_default_content', 15, 2 );
+
+// Alignment
+add_action( 'video_add_sections', 'gs_add_default_alignment_heading', 20, 2 );
+add_action( 'video_add_sections', 'gs_add_default_alignment', 25, 2 );
+
+// Layout
+add_action( 'video_add_sections', 'gs_add_default_layout_heading', 30, 2 );
+add_action( 'video_add_sections', 'gs_add_default_layout', 35, 2 );
+
+// Color
+add_action( 'video_add_sections', 'gs_add_default_color_heading', 40, 2 );
+// add_action( 'video_add_sections', 'gs_add_default_color', 45, 2 );
+add_action( 'video_add_sections', 'gs_add_video_color_fields', 45, 2 );
 
 
-function gs_add_video_content_fields( $key, $prefix ) {
+function gs_add_video_content_heading( $key, $prefix ) {
+
+	// Alignment fields
+	acf_add_local_field( array(
+		array(
+			'key' => $prefix . 'F7aWEC6uj4V66uu',
+			'label' => 'Video',
+			'name' => '',
+			'type' => 'accordion',
+			'parent' => $key,
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'open' => 0,
+			'multi_expand' => 0,
+			'endpoint' => 0,
+		),
+	));
+}
+
+function gs_add_video_content( $key, $prefix ) {
 
 	// Alignment fields
 	acf_add_local_field( array(

@@ -1,7 +1,6 @@
 <?php
 
-function gs_add_default_alignment( $key, $prefix ) {
-
+function gs_add_default_alignment_heading( $key, $prefix ) {
 	// Alignment fields
 	acf_add_local_field( array(
 		array(
@@ -22,6 +21,13 @@ function gs_add_default_alignment( $key, $prefix ) {
 			'multi_expand' => 0,
 			'endpoint' => 0,
 		),
+	));
+}
+
+function gs_add_default_alignment( $key, $prefix ) {
+
+	// Alignment fields
+	acf_add_local_field( array(
 		array(
 			'key' => $prefix . '68Cx8T6g3wGLVda',
 			'label' => 'Smart center align',
