@@ -1,10 +1,10 @@
 <?php
 /*
-	Plugin Name: Gutenberg Sections
-	Plugin URI: https://elod.in
-    GitHub Plugin URI: https://github.com/jonschr/gutenberg-plates
+    Plugin Name: Gutenberg Sections
+    Plugin URI: https://elod.in
+    GitHub Plugin URI: https://github.com/jonschr/gutenberg-sections
     Description: Preset layouts for Gutenberg, using ACF for rendering
-	Version: 0.4
+    Version: 0.4.1
     Author: Jon Schroeder
     Author URI: https://elod.in
 
@@ -29,7 +29,7 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'GUTENBERG_SECTIONS', dirname( __FILE__ ) );
 
 // Define the version of the plugin
-define ( 'GUTENBERG_SECTIONS_VERSION', '0.4' );
+define ( 'GUTENBERG_SECTIONS_VERSION', '0.4.1' );
 
 /////////////////
 // IMAGE SIZES //
