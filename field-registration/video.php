@@ -183,11 +183,11 @@ function gs_add_video_content( $key, $prefix ) {
         ),
         array(
             'key' => $prefix . '7bQceR49XGCQ26f',
-            'label' => '.mp4 video file (Option B)',
+            'label' => '.mp4 video file',
             'name' => 'video_mp4',
             'type' => 'file',
             'parent' => $key,
-            'return_format' => 'array',
+            'return_format' => 'url',
             'library' => 'all',
             'min_size' => '',
             'max_size' => '',
@@ -207,7 +207,7 @@ function gs_add_video_content( $key, $prefix ) {
         ),
         array(
             'key' => $prefix . '23X2wiAT6RKGLh8',
-            'label' => '.webm video file (Option B)',
+            'label' => '.webm video file',
             'name' => 'video_webm',
             'type' => 'file',
             'parent' => $key,
@@ -225,7 +225,7 @@ function gs_add_video_content( $key, $prefix ) {
             'wrapper' => array (
                 'width' => 25,
             ),
-            'return_format' => 'array',
+            'return_format' => 'url',
             'library' => 'all',
             'min_size' => '',
             'max_size' => '',

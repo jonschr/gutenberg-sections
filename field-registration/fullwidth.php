@@ -73,16 +73,16 @@ function register_section_fullwidth() {
 
 // Content
 add_action( 'fullwidth_add_sections', 'gs_add_default_content_heading', 10, 2 );
-add_action( 'fullwidth_add_sections', 'gs_add_default_content', 15, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_content', 10, 2 );
 
 // Alignment
-add_action( 'fullwidth_add_sections', 'gs_add_default_alignment_heading', 20, 2 );
-add_action( 'fullwidth_add_sections', 'gs_add_default_alignment', 25, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_alignment_heading', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_alignment', 10, 2 );
 
 // Layout
-add_action( 'fullwidth_add_sections', 'gs_add_default_layout_heading', 30, 2 );
-add_action( 'fullwidth_add_sections', 'gs_add_default_layout', 35, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_layout_heading', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_layout', 10, 2 );
 
 // Color
-add_action( 'fullwidth_add_sections', 'gs_add_default_color_heading', 40, 2 );
-add_action( 'fullwidth_add_sections', 'gs_add_default_color', 45, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_color_heading', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_color', 10, 2 );

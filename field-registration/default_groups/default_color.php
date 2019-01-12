@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Add the accordion heading
+ */
 function gs_add_default_color_heading( $key, $prefix ) {
 
 	// Color and background
@@ -26,9 +29,26 @@ function gs_add_default_color_heading( $key, $prefix ) {
 
 }
 
+/**
+ * Add individual fields to this section (defined below) when it's used as a default
+ */
 function gs_add_default_color( $key, $prefix ) {
 
-	// Color and background
+	do_action( $prefix . 'add_field', $key, $prefix );
+
+	add_action( $prefix . 'add_field', 'gs_add_default_color_field_background_image', 10, 2 );
+	add_action( $prefix . 'add_field', 'gs_add_default_color_field_fixed_position_background', 10, 2 );
+	add_action( $prefix . 'add_field', 'gs_add_default_color_field_background_color', 10, 2 );
+	add_action( $prefix . 'add_field', 'gs_add_default_color_field_background_color_opacity', 10, 2 );
+	add_action( $prefix . 'add_field', 'gs_add_default_color_field_text_color', 10, 2 );
+
+}
+
+////////////////////////////////////
+// INDIVIDUAL FIELD REGISTRATIONS //
+////////////////////////////////////
+
+function gs_add_default_color_field_background_image( $key, $prefix ) {
 	acf_add_local_field( array(
 		array(
 			'key' => $prefix . 'M3Zsa6XBo3G63Cg',
@@ -42,10 +62,15 @@ function gs_add_default_color( $key, $prefix ) {
 			'return_format' => 'array',
 			'preview_size' => 'editor-thumb-wide',
 			'library' => 'all',
-			'min_width' => '1800',
-			'min_height' => '1000',
+			'min_width' => '1400',
+			'min_height' => '800',
 			'mime_types' => 'jpg',
 		),
+	));
+}
+
+function gs_add_default_color_field_fixed_position_background( $key, $prefix ) {
+	acf_add_local_field( array(
 		array(
 			'key' => $prefix . '3gmo8M63TPuT9Fv',
 			'label' => 'Fixed position background',
@@ -67,6 +92,11 @@ function gs_add_default_color( $key, $prefix ) {
 				),
 			),
 		),
+	));
+}
+
+function gs_add_default_color_field_background_color( $key, $prefix ) {
+	acf_add_local_field( array(
 		array(
 			'key' => $prefix . 'AF49yue6j7Rut7Q',
 			'label' => 'Background color',
@@ -78,6 +108,11 @@ function gs_add_default_color( $key, $prefix ) {
 			'conditional_logic' => 0,
 			'default_value' => '',
 		),
+	));
+}
+
+function gs_add_default_color_field_background_color_opacity( $key, $prefix ) {
+	acf_add_local_field( array(
 		array(
 			'key' => $prefix . 'iAG44q2khq72Brc',
 			'label' => 'Background color opacity',
@@ -106,6 +141,11 @@ function gs_add_default_color( $key, $prefix ) {
 			'prepend' => '',
 			'append' => '%',
 		),
+	));
+}
+
+function gs_add_default_color_field_text_color( $key, $prefix ) {
+	acf_add_local_field( array(
 		array(
 			'key' => $prefix . 'UNG6K78Cr29CuWw',
 			'label' => 'Text color',
@@ -118,5 +158,4 @@ function gs_add_default_color( $key, $prefix ) {
 			'default_value' => '',
 		),
 	));
-
 }
