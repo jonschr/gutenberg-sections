@@ -62,6 +62,7 @@ require_once( 'field-registration/default_groups/default_color.php' );
 require_once( 'field-registration/fullwidth.php' );
 require_once( 'field-registration/video.php' );
 require_once( 'field-registration/twocolumn.php' );
+require_once( 'field-registration/checkerboard.php' );
 
 /////////////////////////////
 // REGISTER BLOCK CATEGORY //
