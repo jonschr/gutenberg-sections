@@ -1,3 +1,7 @@
+/* ==========================================================================
+   Video defaults
+   ========================================================================== */
+
 .gutenberg-section.video {
     position: relative;
     top: 0;
@@ -61,48 +65,6 @@
             height: 100%;
             object-fit: cover;
         }
-    }
-
-    &.full-color > video {
-        opacity: 1;
-    }
-}
-
-/*
-   Colors
-   ========================================================================== */
-// .section.background_video:after {
-//     content: "";
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     width: 100%;
-//     background-color: black;
-//     z-index: 0;
-// }
-
-/*
-   Limit-height
-   ========================================================================== */
-
-.section.background_video {
-    height: auto;
-    padding-top: 100px;
-    padding-bottom: 100px;
-
-    @include mobile {
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-
-
-    .wrap {
-        position: relative;
-        transform: translate(0%, 0%);
-        top: auto;
-        left: auto;
     }
 }
 

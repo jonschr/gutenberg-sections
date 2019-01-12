@@ -26,9 +26,7 @@ function gs_add_default_layout_heading( $key, $prefix ) {
 
 }
 
-function gs_add_default_layout( $key, $prefix ) {
-
-	// Layouts
+function gs_add_default_layout_fullheight( $key, $prefix ) {
 	acf_add_local_field( array(
 		array(
 			'key' => $prefix . 'p3X3TnygcGVy864',
@@ -43,6 +41,11 @@ function gs_add_default_layout( $key, $prefix ) {
 			'default_value' => 0,
 			'ui' => 1,
 		),
+	));
+}
+
+function gs_add_default_layout_content_width( $key, $prefix ) {
+	acf_add_local_field( array(
 		array(
 			'key' => $prefix . 'field_5c2f0c882bec1',
 			'label' => 'Maximum content width',
@@ -62,6 +65,11 @@ function gs_add_default_layout( $key, $prefix ) {
 			'prepend' => '',
 			'append' => 'px',
 		),
+	));
+}
+
+function gs_add_default_layout_padding_top( $key, $prefix ) {
+	acf_add_local_field( array(
 		array(
 			'key' => $prefix . '22ZC8X8CGyXJoe6',
 			'label' => 'Padding top',
@@ -80,6 +88,11 @@ function gs_add_default_layout( $key, $prefix ) {
 			'prepend' => '',
 			'append' => 'px',
 		),
+	));
+}
+
+function gs_add_default_layout_padding_bottom( $key, $prefix ) {
+	acf_add_local_field( array(
 		array(
 			'key' => $prefix . '9qnRt992RqvYvt3',
 			'label' => 'Padding bottom',
@@ -97,6 +110,11 @@ function gs_add_default_layout( $key, $prefix ) {
 			'step' => 10,
 			'append' => 'px',
 		),
+	));
+}
+
+function gs_add_default_layout_margin_before( $key, $prefix ) {
+	acf_add_local_field( array(
 		array(
 			'key' => $prefix . 'Y7JCPN7E436xVHi',
 			'label' => 'Margin before',
@@ -114,6 +132,11 @@ function gs_add_default_layout( $key, $prefix ) {
 			'prepend' => '',
 			'append' => 'px',
 		),
+	));
+}
+
+function gs_add_default_layout_margin_after( $key, $prefix ) {
+	acf_add_local_field( array(
 		array(
 			'key' => $prefix . 'c2GiB3Vzep89bY7',
 			'label' => 'Margin after',
@@ -130,6 +153,11 @@ function gs_add_default_layout( $key, $prefix ) {
 			'max' => 0,
 			'append' => 'px',
 		),
+	));
+}
+
+function gs_add_default_layout_z_index( $key, $prefix ) {
+	acf_add_local_field( array(
 		array(
 			'key' => $prefix . 't3N2M3pifq8ea7o',
 			'label' => 'Z index',
@@ -146,5 +174,4 @@ function gs_add_default_layout( $key, $prefix ) {
 			'max' => 100,
 		),
 	));
-
 }

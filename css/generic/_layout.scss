@@ -2,14 +2,16 @@
    Full height
    ========================================================================== */
 
-.gutenberg-section.full-height {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+@include notmobile {
+    .gutenberg-section.full-height {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
 
-    > .content-wrap {
-        flex: 0 1 auto;
+        > .content-wrap {
+            flex: 0 1 auto;
+        }
     }
 }

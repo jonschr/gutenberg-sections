@@ -73,25 +73,56 @@ function register_section_twocolumn() {
 
 // Content
 add_action( 'twocolumn_add_sections', 'gs_add_default_content_heading', 10, 2 );
-// add_action( 'twocolumn_add_sections', 'gs_add_default_content', 15, 2 );
-add_action( 'twocolumn_add_sections', 'gs_add_custom_content_twocolumn', 15, 2 );
+// add_action( 'twocolumn_add_sections', 'gs_add_default_content', 10, 2 );
 
-// Alignment
-add_action( 'twocolumn_add_sections', 'gs_add_default_alignment_heading', 20, 2 );
-add_action( 'twocolumn_add_sections', 'gs_add_default_alignment', 25, 2 );
-add_action( 'twocolumn_add_sections', 'gs_add_custom_alignment_twocolumn', 27, 2 );
+	// Content additions
+	add_action( 'twocolumn_add_sections', 'gs_add_custom_content_twocolumn_above_and_below', 10, 2 );
+	add_action( 'twocolumn_add_sections', 'gs_add_custom_content_twocolumn_content_above', 10, 2 );
+	add_action( 'twocolumn_add_sections', 'gs_add_custom_content_twocolumn_content_left', 10, 2 );
+	add_action( 'twocolumn_add_sections', 'gs_add_custom_content_twocolumn_content_right', 10, 2 );
+	add_action( 'twocolumn_add_sections', 'gs_add_custom_content_twocolumn_content_below', 10, 2 );
 
-// Layout
-add_action( 'twocolumn_add_sections', 'gs_add_default_layout_heading', 30, 2 );
-add_action( 'twocolumn_add_sections', 'gs_add_default_layout', 35, 2 );
+// Alignment defaults
+add_action( 'twocolumn_add_sections', 'gs_add_default_alignment_heading', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_alignment', 10, 2 );
 
-// Color
-add_action( 'twocolumn_add_sections', 'gs_add_default_color_heading', 40, 2 );
-add_action( 'twocolumn_add_sections', 'gs_add_default_color', 45, 2 );
+	// More alignment fields
+	add_action( 'twocolumn_add_sections', 'gs_add_custom_alignment_twocolumn_horizontal_alignment', 10, 2 );
+	add_action( 'twocolumn_add_sections', 'gs_add_custom_alignment_twocolumn_vertical_alignment', 10, 2 );
 
-function gs_add_custom_content_twocolumn( $key, $prefix ) {
+// Layout defaults
+add_action( 'twocolumn_add_sections', 'gs_add_default_layout_heading', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_layout_fullheight', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_layout_content_width', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_layout_padding_top', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_layout_padding_bottom', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_layout_margin_before', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_layout_margin_after', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_layout_z_index', 10, 2 );
 
-	// Content fields
+// Color defaults
+add_action( 'twocolumn_add_sections', 'gs_add_default_color_heading', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_color_field_background_image', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_color_field_fixed_position_background', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_color_field_background_color', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_color_field_background_color_opacity', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_color_field_text_color', 10, 2 );
+
+// Video defaults
+add_action( 'twocolumn_add_sections', 'gs_add_default_video_heading', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_video_files_or_url', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_video_image_fallback', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_video_video_url', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_video_video_mp4', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_video_video_webm', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_video_heading', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_video_heading', 10, 2 );
+
+///////////////////////////////
+// TWO-COLUMN CONTENT FIELDS //
+///////////////////////////////
+
+function gs_add_custom_content_twocolumn_above_and_below( $key, $prefix ) {
 	acf_add_local_field(array(
 		array(
 			'key' => $prefix . 'Q48Wwib6PYrc73a',
@@ -106,6 +137,11 @@ function gs_add_custom_content_twocolumn( $key, $prefix ) {
 			'default_value' => '',
 			'ui' => 1,
 		),
+	));
+}
+
+function gs_add_custom_content_twocolumn_content_above( $key, $prefix ) {
+	acf_add_local_field(array(
 		array(
 			'key' => $prefix . 'Q6kQhLi98jLF34i',
 			'label' => 'Content above',
@@ -128,6 +164,11 @@ function gs_add_custom_content_twocolumn( $key, $prefix ) {
 				),
 			),
 		),
+	));
+}
+
+function gs_add_custom_content_twocolumn_content_left( $key, $prefix ) {
+	acf_add_local_field(array(
 		array(
 			'key' => $prefix . 'uzk7G29g3TRx3HY',
 			'label' => 'Content left',
@@ -145,6 +186,11 @@ function gs_add_custom_content_twocolumn( $key, $prefix ) {
 			'media_upload' => 1,
 			'delay' => 0,
 		),
+	));
+}
+
+function gs_add_custom_content_twocolumn_content_right( $key, $prefix ) {
+	acf_add_local_field(array(
 		array(
 			'key' => $prefix . 'DNWw79P6rTuwB64',
 			'label' => 'Content right',
@@ -162,6 +208,11 @@ function gs_add_custom_content_twocolumn( $key, $prefix ) {
 			'media_upload' => 1,
 			'delay' => 0,
 		),
+	));
+}
+
+function gs_add_custom_content_twocolumn_content_below( $key, $prefix ) {
+	acf_add_local_field(array(
 		array(
 			'key' => $prefix . 'tHBA3hJe9WL32V',
 			'label' => 'Content below',
@@ -184,11 +235,13 @@ function gs_add_custom_content_twocolumn( $key, $prefix ) {
 			'delay' => 0,
 		),
 	));
-
 }
 
-function gs_add_custom_alignment_twocolumn( $key, $prefix ) {
+/////////////////////////////////
+// TWO-COLUMN ALIGNMENT FIELDS //
+/////////////////////////////////
 
+function gs_add_custom_alignment_twocolumn_horizontal_alignment( $key, $prefix ) {
 	acf_add_local_field(array(
 		array(
 			'key' => $prefix . 'rbhTYUEAT8429q4',
@@ -204,6 +257,11 @@ function gs_add_custom_alignment_twocolumn( $key, $prefix ) {
 			'parent' => $key,
 			'default_value' => 'horizontal-align-half',
 		),
+	));
+}
+
+function gs_add_custom_alignment_twocolumn_vertical_alignment( $key, $prefix ) {
+	acf_add_local_field(array(
 		array(
 			'key' => $prefix . 'WB8sQmm8WT8g42G',
 			'label' => 'Vertical alignment',

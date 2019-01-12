@@ -4,7 +4,7 @@
     Plugin URI: https://elod.in
     GitHub Plugin URI: https://github.com/jonschr/gutenberg-sections
     Description: Preset layouts for Gutenberg, using ACF for rendering
-    Version: 0.4.2
+    Version: 0.5
     Author: Jon Schroeder
     Author URI: https://elod.in
 
@@ -29,7 +29,7 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'GUTENBERG_SECTIONS', dirname( __FILE__ ) );
 
 // Define the version of the plugin
-define ( 'GUTENBERG_SECTIONS_VERSION', '0.4.2' );
+define ( 'GUTENBERG_SECTIONS_VERSION', '0.5' );
 
 //////////////////////
 // COMMON FUNCTIONS //
@@ -37,6 +37,8 @@ define ( 'GUTENBERG_SECTIONS_VERSION', '0.4.2' );
 
 require_once( 'blocks/common-styles.php' );
 require_once( 'blocks/common-classes.php' );
+require_once( 'blocks/common-video-output.php' );
+require_once( 'blocks/common-background-image-output.php' );
 
 /////////////////
 // IMAGE SIZES //
@@ -57,10 +59,11 @@ require_once( 'field-registration/default_groups/default_content.php' );
 require_once( 'field-registration/default_groups/default_alignment.php' );
 require_once( 'field-registration/default_groups/default_layout.php' );
 require_once( 'field-registration/default_groups/default_color.php' );
+require_once( 'field-registration/default_groups/default_video.php' );
 
 // Register the fields and set up the acf blocks
 require_once( 'field-registration/fullwidth.php' );
-require_once( 'field-registration/video.php' );
+// require_once( 'field-registration/video.php' );
 require_once( 'field-registration/twocolumn.php' );
 require_once( 'field-registration/checkerboard.php' );
 

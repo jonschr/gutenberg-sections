@@ -81,11 +81,17 @@ add_action( 'video_add_sections', 'gs_add_default_content', 15, 2 );
 
 // Alignment
 add_action( 'video_add_sections', 'gs_add_default_alignment_heading', 20, 2 );
-add_action( 'video_add_sections', 'gs_add_default_alignment', 25, 2 );
+// add_action( 'video_add_sections', 'gs_add_default_alignment', 25, 2 );
 
 // Layout
 add_action( 'video_add_sections', 'gs_add_default_layout_heading', 30, 2 );
-add_action( 'video_add_sections', 'gs_add_default_layout', 35, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_layout_fullheight', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_layout_content_width', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_layout_padding_top', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_layout_padding_bottom', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_layout_margin_before', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_layout_margin_after', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_layout_z_index', 10, 2 );
 
 // Color
 add_action( 'video_add_sections', 'gs_add_default_color_heading', 40, 2 );

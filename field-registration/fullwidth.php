@@ -79,10 +79,31 @@ add_action( 'fullwidth_add_sections', 'gs_add_default_content', 10, 2 );
 add_action( 'fullwidth_add_sections', 'gs_add_default_alignment_heading', 10, 2 );
 add_action( 'fullwidth_add_sections', 'gs_add_default_alignment', 10, 2 );
 
-// Layout
+// Layout defaults
 add_action( 'fullwidth_add_sections', 'gs_add_default_layout_heading', 10, 2 );
-add_action( 'fullwidth_add_sections', 'gs_add_default_layout', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_layout_fullheight', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_layout_content_width', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_layout_padding_top', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_layout_padding_bottom', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_layout_margin_before', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_layout_margin_after', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_layout_z_index', 10, 2 );
 
-// Color
+// Color defaults
 add_action( 'fullwidth_add_sections', 'gs_add_default_color_heading', 10, 2 );
-add_action( 'fullwidth_add_sections', 'gs_add_default_color', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_color_field_background_image', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_color_field_fixed_position_background', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_color_field_background_color', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_color_field_background_color_opacity', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_color_field_text_color', 10, 2 );
+
+// Video defaults
+add_action( 'fullwidth_add_sections', 'gs_add_default_video_heading', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_video_files_or_url', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_video_image_fallback', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_video_video_url', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_video_video_mp4', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_video_video_webm', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_video_heading', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_default_video_heading', 10, 2 );
+
