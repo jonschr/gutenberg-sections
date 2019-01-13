@@ -15,7 +15,7 @@ function init_checkerboard_block() {
     acf_register_block(
         array(
             'name'              => 'checkerboard',
-            'title'             => __( 'checkerboard' ),
+            'title'             => __( 'Checkerboard' ),
             'description'       => __( 'A checkerboard wrapper section, with support for background images and colors behind grouped paragraphs, headings, etc.' ),
             'render_callback'   => 'gs_render',
             'category'          => 'sections',
