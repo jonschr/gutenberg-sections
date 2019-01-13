@@ -74,6 +74,7 @@ function register_section_checkerboard() {
 // Content
 add_action( 'checkerboard_add_sections', 'gs_add_default_content_heading', 10, 2 );
 // add_action( 'checkerboard_add_sections', 'gs_add_default_content', 10, 2 );
+add_action( 'checkerboard_add_sections', 'gs_add_custom_checkerboard_alignment', 10, 2 );
 add_action( 'checkerboard_add_sections', 'gs_add_custom_checkerboard_content', 10, 2 );
 add_action( 'checkerboard_add_sections', 'gs_add_custom_checkerboard_image', 10, 2 );
 
@@ -83,7 +84,6 @@ add_action( 'checkerboard_add_sections', 'gs_add_custom_checkerboard_image', 10,
 
 // Layout defaults
 add_action( 'checkerboard_add_sections', 'gs_add_default_layout_heading', 10, 2 );
-add_action( 'checkerboard_add_sections', 'gs_add_custom_checkerboard_alignment', 10, 2 );
 // add_action( 'checkerboard_add_sections', 'gs_add_default_layout_fullheight', 10, 2 );
 // add_action( 'checkerboard_add_sections', 'gs_add_default_layout_content_width', 10, 2 );
 // add_action( 'checkerboard_add_sections', 'gs_add_default_layout_padding_top', 10, 2 );
@@ -116,7 +116,7 @@ add_action( 'checkerboard_add_sections', 'gs_add_default_color_field_text_color'
 ////////////////////////////////
 
 // Color heading
-function gs_add_custom_checkerboard_color_heading( $key, $prefix ) {
+function gs_add_checkerboard_custom_color_heading( $key, $prefix ) {
 	acf_add_local_field( array(
 		array(
 			'key' => $prefix . 'XwD94xiL6y8AM6Y',
@@ -137,6 +137,33 @@ function gs_add_custom_checkerboard_color_heading( $key, $prefix ) {
 /////////////////////////////////
 // CHECKERBOARD CONTENT FIELDS //
 /////////////////////////////////
+
+// Checkerboard alignment
+function gs_add_custom_checkerboard_alignment( $key, $prefix ) {
+
+	acf_add_local_field(array(
+		array(
+			'key' => $prefix . 'CwNLx7Z6GK64r6V',
+			'label' => 'Checkerboard alignment',
+			'name' => 'alignment',
+			'type' => 'radio',
+			'parent' => $key,
+			'instructions' => '',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'choices' => array (
+				'content_left' => 'Content left, image right',
+				'content_right' => 'Image left, content right',
+			),
+			'allow_null' => 0,
+			'other_choice' => 0,
+			'save_other_choice' => 0,
+			'default_value' => 'content_left',
+			'layout' => 'horizontal',
+		),
+	));
+
+}
 
 // Checkerboard content
 function gs_add_custom_checkerboard_content( $key, $prefix ) {
@@ -186,37 +213,6 @@ function gs_add_custom_checkerboard_image( $key, $prefix ) {
 			'min_width' => '800',
 			'min_height' => '800',
 			'mime_types' => 'jpg',
-		),
-	));
-
-}
-
-////////////////////////////////
-// CHECKERBOARD LAYOUT FIELDS //
-////////////////////////////////
-
-// Checkerboard alignment
-function gs_add_custom_checkerboard_alignment( $key, $prefix ) {
-
-	acf_add_local_field(array(
-		array(
-			'key' => $prefix . 'CwNLx7Z6GK64r6V',
-			'label' => '',
-			'name' => 'alignment',
-			'type' => 'radio',
-			'parent' => $key,
-			'instructions' => '',
-			'required' => 1,
-			'conditional_logic' => 0,
-			'choices' => array (
-				'content_left' => 'Content left',
-				'content_right' => 'Content right',
-			),
-			'allow_null' => 0,
-			'other_choice' => 0,
-			'save_other_choice' => 0,
-			'default_value' => 'content_left',
-			'layout' => 'horizontal',
 		),
 	));
 
