@@ -179,7 +179,7 @@ function gs_add_custom_checkerboard_content( $key, $prefix ) {
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '60',
+				'width' => '50',
 			),
 			'default_value' => '',
 			'tabs' => 'all',
@@ -208,7 +208,7 @@ function gs_add_custom_checkerboard_image( $key, $prefix ) {
 			'preview_size' => 'large',
 			'library' => 'all',
 			'wrapper' => array(
-				'width' => '40',
+				'width' => '50',
 			),
 			'min_width' => '800',
 			'min_height' => '800',
