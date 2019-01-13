@@ -72,17 +72,152 @@ function register_section_checkerboard() {
 //////////////////////////////////////////////////
 
 // Content
-// add_action( 'checkerboard_add_sections', 'gs_add_default_content_heading', 10, 2 );
-// add_action( 'checkerboard_add_sections', 'gs_add_default_content', 15, 2 );
+add_action( 'checkerboard_add_sections', 'gs_add_default_content_heading', 10, 2 );
+// add_action( 'checkerboard_add_sections', 'gs_add_default_content', 10, 2 );
+add_action( 'checkerboard_add_sections', 'gs_add_custom_checkerboard_content', 10, 2 );
+add_action( 'checkerboard_add_sections', 'gs_add_custom_checkerboard_image', 10, 2 );
 
-// // Alignment
-// add_action( 'checkerboard_add_sections', 'gs_add_default_alignment_heading', 20, 2 );
-// add_action( 'checkerboard_add_sections', 'gs_add_default_alignment', 25, 2 );
+// Alignment
+// add_action( 'checkerboard_add_sections', 'gs_add_default_alignment_heading', 10, 2 );
+// add_action( 'checkerboard_add_sections', 'gs_add_default_alignment', 10, 2 );
 
-// // Layout
-// add_action( 'checkerboard_add_sections', 'gs_add_default_layout_heading', 30, 2 );
-// add_action( 'checkerboard_add_sections', 'gs_add_default_layout', 35, 2 );
+// Layout defaults
+add_action( 'checkerboard_add_sections', 'gs_add_default_layout_heading', 10, 2 );
+add_action( 'checkerboard_add_sections', 'gs_add_custom_checkerboard_alignment', 10, 2 );
+// add_action( 'checkerboard_add_sections', 'gs_add_default_layout_fullheight', 10, 2 );
+// add_action( 'checkerboard_add_sections', 'gs_add_default_layout_content_width', 10, 2 );
+// add_action( 'checkerboard_add_sections', 'gs_add_default_layout_padding_top', 10, 2 );
+// add_action( 'checkerboard_add_sections', 'gs_add_default_layout_padding_bottom', 10, 2 );
+add_action( 'checkerboard_add_sections', 'gs_add_default_layout_margin_before', 10, 2 );
+add_action( 'checkerboard_add_sections', 'gs_add_default_layout_margin_after', 10, 2 );
+add_action( 'checkerboard_add_sections', 'gs_add_default_layout_z_index', 10, 2 );
 
-// // Color
-// add_action( 'checkerboard_add_sections', 'gs_add_default_color_heading', 40, 2 );
-// add_action( 'checkerboard_add_sections', 'gs_add_default_color', 45, 2 );
+// Color defaults
+// add_action( 'checkerboard_add_sections', 'gs_add_default_color_heading', 10, 2 );
+add_action( 'checkerboard_add_sections', 'gs_add_checkerboard_custom_color_heading', 10, 2 );
+// add_action( 'checkerboard_add_sections', 'gs_add_default_color_field_background_image', 10, 2 );
+// add_action( 'checkerboard_add_sections', 'gs_add_default_color_field_fixed_position_background', 10, 2 );
+add_action( 'checkerboard_add_sections', 'gs_add_default_color_field_background_color', 10, 2 );
+// add_action( 'checkerboard_add_sections', 'gs_add_default_color_field_background_color_opacity', 10, 2 );
+add_action( 'checkerboard_add_sections', 'gs_add_default_color_field_text_color', 10, 2 );
+
+// Video defaults
+// add_action( 'checkerboard_add_sections', 'gs_add_default_video_heading', 10, 2 );
+// add_action( 'checkerboard_add_sections', 'gs_add_default_video_files_or_url', 10, 2 );
+// add_action( 'checkerboard_add_sections', 'gs_add_default_video_image_fallback', 10, 2 );
+// add_action( 'checkerboard_add_sections', 'gs_add_default_video_video_url', 10, 2 );
+// add_action( 'checkerboard_add_sections', 'gs_add_default_video_video_mp4', 10, 2 );
+// add_action( 'checkerboard_add_sections', 'gs_add_default_video_video_webm', 10, 2 );
+// add_action( 'checkerboard_add_sections', 'gs_add_default_video_heading', 10, 2 );
+// add_action( 'checkerboard_add_sections', 'gs_add_default_video_heading', 10, 2 );
+
+////////////////////////////////
+// CHECKERBOARD HEADING FIELD //
+////////////////////////////////
+
+// Color heading
+function gs_add_custom_checkerboard_color_heading( $key, $prefix ) {
+	acf_add_local_field( array(
+		array(
+			'key' => $prefix . 'XwD94xiL6y8AM6Y',
+			'label' => 'Color',
+			'name' => '',
+			'type' => 'accordion',
+			'parent' => $key,
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'open' => 0,
+			'multi_expand' => 0,
+			'endpoint' => 0,
+		),
+	));
+}
+
+/////////////////////////////////
+// CHECKERBOARD CONTENT FIELDS //
+/////////////////////////////////
+
+// Checkerboard content
+function gs_add_custom_checkerboard_content( $key, $prefix ) {
+
+	acf_add_local_field(array(
+		array(
+			'key' => $prefix . 'uwXzbe372nV3Fd4',
+			'label' => '',
+			'name' => 'content',
+			'type' => 'wysiwyg',
+			'parent' => $key,
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '60',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+	));
+
+}
+
+// Checkerboard image
+function gs_add_custom_checkerboard_image( $key, $prefix ) {
+
+	acf_add_local_field(array(
+		array(
+			'key' => $prefix . '9m8G96QRNWX3vLH',
+			'label' => '',
+			'name' => 'image',
+			'type' => 'image',
+			'parent' => $key,
+			'instructions' => 'An image to place next to the content',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'return_format' => 'url',
+			'preview_size' => 'large',
+			'library' => 'all',
+			'wrapper' => array(
+				'width' => '40',
+			),
+			'min_width' => '800',
+			'min_height' => '800',
+			'mime_types' => 'jpg',
+		),
+	));
+
+}
+
+////////////////////////////////
+// CHECKERBOARD LAYOUT FIELDS //
+////////////////////////////////
+
+// Checkerboard alignment
+function gs_add_custom_checkerboard_alignment( $key, $prefix ) {
+
+	acf_add_local_field(array(
+		array(
+			'key' => $prefix . 'CwNLx7Z6GK64r6V',
+			'label' => '',
+			'name' => 'alignment',
+			'type' => 'radio',
+			'parent' => $key,
+			'instructions' => '',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'choices' => array (
+				'content_left' => 'Content left',
+				'content_right' => 'Content right',
+			),
+			'allow_null' => 0,
+			'other_choice' => 0,
+			'save_other_choice' => 0,
+			'default_value' => 'content_left',
+			'layout' => 'horizontal',
+		),
+	));
+
+}
