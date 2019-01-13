@@ -19,8 +19,7 @@
     GNU General Public License for more details.
 */
 
-
-/* Prevent direct access to the plugin */
+// Prevent direct access to the plugin
 if ( !defined( 'ABSPATH' ) ) {
     die( "Sorry, you are not allowed to access this page directly." );
 }
@@ -93,7 +92,7 @@ function gs_add_block_category( $categories, $post ) {
  * This is a global function, which should handle rendering for all blocks
  */
 function gs_render( $block ) {
-  
+
     // convert name ("acf/testimonial") into path friendly slug ("testimonial")
     $slug = str_replace('acf/', '', $block['name']);
 
@@ -112,13 +111,13 @@ function gs_render( $block ) {
  */
 add_action( 'wp_enqueue_scripts', 'gs_enqueue_frontend' );
 function gs_enqueue_frontend() {
-        
+
     // Plugin styles
     wp_enqueue_style( 'gs-section-defaults', plugin_dir_url( __FILE__ ) . 'css/section-defaults.css', array(), GUTENBERG_SECTIONS_VERSION, 'screen' );
     
     // Script
     // wp_register_script( 'slick-init', plugin_dir_url( __FILE__ ) . 'js/slick-init.js', array( 'slick-main' ), GUTENBERG_SECTIONS_VERSION, true );
-    
+
 }
 
 /**
