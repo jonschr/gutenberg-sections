@@ -1,0 +1,149 @@
+/* ==========================================================================
+   Checkerboard
+   ========================================================================== */
+
+.gutenberg-section.checkerboard {
+    @extend .gutenberg-section.alignwide;
+
+    padding: 0 !important;
+
+    .checkerboard-wrap {
+        display: flex;
+        align-items: stretch;
+
+        .column {
+            flex: 0 1 auto;
+            width: 100%;
+        }
+
+        @include mobile {
+            flex-flow: column;
+        }
+
+
+        .checkerboard-image {
+            background-position: center center;
+            background-size: cover;
+            min-height: 400px;
+
+            @include mobile {
+                min-height: 200px;
+            }
+        }
+
+        .checkerboard-content {
+            display: flex;
+            align-items: center;
+
+            .checkerboard-content-wrap {
+                flex: 0 1 auto;
+                width: 100%;
+                padding: 60px;
+                max-width: calc( 1060px / 2 - 60px );
+
+                @include notdesktop {
+                    max-width: 100%;
+                }
+
+
+                :first-child {
+                    margin-top: 0;
+                }
+
+                :last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Alignment classes
+   ========================================================================== */
+
+/*
+   Content left
+   ========================================================================== */
+
+.gutenberg-section.checkerboard.content_left {
+    .checkerboard-wrap {
+        .checkerboard-image {
+            order: 2;
+        }
+
+        .checkerboard-content {
+            order: 1;
+        }
+
+        .checkerboard-content {
+            justify-content: flex-end;
+
+            .checkerboard-content-wrap {
+                padding-left: 0;
+                text-align: right;
+
+                @include mobile {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+/*
+   Content right
+   ========================================================================== */
+
+.gutenberg-section.checkerboard.content_right {
+    .checkerboard-wrap {
+        .checkerboard-image {
+            order: 1;
+        }
+
+        .checkerboard-content {
+            order: 2;
+        }
+
+        .checkerboard-content {
+            justify-content: flex-start;
+
+            .checkerboard-content-wrap {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+/*
+   BOTH content left and content right (overrides)
+   ========================================================================== */
+
+body .gutenberg-section.checkerboard.content_left,
+body .gutenberg-section.checkerboard.content_right {
+    .checkerboard-wrap {
+        .checkerboard-image {
+            @include mobile {
+                order: 1;
+            }
+        }
+
+        .checkerboard-content {
+            @include mobile {
+                order: 2;
+            }
+        }
+
+        .checkerboard-content {
+            .checkerboard-content-wrap {
+                @media (max-width: 1200px) {
+                    padding: 40px;
+                }
+
+                @include mobile {
+                    padding: 30px;
+                }
+            }
+        }
+    }
+}
