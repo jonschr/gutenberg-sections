@@ -147,10 +147,6 @@
 /* ==========================================================================
    Video defaults
    ========================================================================== */
-.gutenberg-section * {
-  color: yellow !important;
-}
-
 .gutenberg-section.video {
   position: relative;
   top: 0;

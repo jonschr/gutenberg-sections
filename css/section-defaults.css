@@ -162,10 +162,6 @@ body.page-template-default.full-width-content main.content > .page > .entry-head
 /* ==========================================================================
    Video defaults
    ========================================================================== */
-.gutenberg-section * {
-  color: yellow !important;
-}
-
 .gutenberg-section.video {
   position: relative;
   top: 0;
