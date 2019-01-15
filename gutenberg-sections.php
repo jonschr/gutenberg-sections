@@ -34,10 +34,14 @@ define ( 'GUTENBERG_SECTIONS_VERSION', '0.6' );
 // COMMON FUNCTIONS //
 //////////////////////
 
+// Fields which may be used in multiple blocks
 require_once( 'blocks/common-styles.php' );
 require_once( 'blocks/common-classes.php' );
 require_once( 'blocks/common-video-output.php' );
 require_once( 'blocks/common-background-image-output.php' );
+
+// Customize the ACF colorpicker to use the built-in WordPress colors
+require_once( 'inc/acf-color-picker-customization.php' );
 
 /////////////////
 // IMAGE SIZES //
@@ -140,5 +144,3 @@ function gs_enqueue_required() {
     // silence is golden...
     // 
 }
-
-
