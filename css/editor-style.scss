@@ -13,8 +13,9 @@
 @import "sections/video";
 @import "sections/twocolumn";
 @import "sections/checkerboard";
+@import "sections/featureditems";
 
-@import "generic/editor-remove-label-on-main-content";
+// @import "generic/editor-remove-label-on-main-content";
 @import "generic/editor-image-uploader";
 
 .gutenberg-section {
@@ -66,7 +67,8 @@
         padding: 17px !important;
     }
 
-    .acf-field .acf-input > p.description {
+    .acf-field .acf-input p.description {
         font-size: 13px;
+        line-height: 1.2em;
     }
 }
