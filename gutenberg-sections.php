@@ -34,6 +34,12 @@ define ( 'GUTENBERG_SECTIONS_VERSION', '0.7' );
 // COMMON FUNCTIONS //
 //////////////////////
 
+// Needed to work properly
+function section_alignment_setup() {
+    add_theme_support( 'align-wide' );
+}
+add_action( 'after_setup_theme', 'section_alignment_setup' );
+
 // Fields which may be used in multiple blocks
 require_once( 'blocks/common-styles.php' );
 require_once( 'blocks/common-classes.php' );
@@ -66,9 +72,9 @@ require_once( 'field-registration/default_groups/default_video.php' );
 
 // Register the fields and set up the acf blocks
 require_once( 'field-registration/fullwidth.php' );
-// require_once( 'field-registration/video.php' );
 require_once( 'field-registration/twocolumn.php' );
 require_once( 'field-registration/checkerboard.php' );
+require_once( 'field-registration/featureditems.php' );
 
 /////////////////////////////
 // REGISTER BLOCK CATEGORY //
