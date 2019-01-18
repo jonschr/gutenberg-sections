@@ -53,14 +53,16 @@ function gs_common_styles( $id ) {
 			}
 		}
 
-	    #<?php echo $id; ?> h1,
-	    #<?php echo $id; ?> h2,
-	    #<?php echo $id; ?> h3,
-	    #<?php echo $id; ?> h4,
-	    #<?php echo $id; ?> p,
-	    #<?php echo $id; ?> li {
-	    	color: <?php the_field( 'text_color' ); ?>;
-	    }
+		<?php if ( get_field( 'text_color' ) != '' ): ?>        
+			#<?php echo $id; ?> h1,
+			#<?php echo $id; ?> h2,
+			#<?php echo $id; ?> h3,
+			#<?php echo $id; ?> h4,
+			#<?php echo $id; ?> p,
+			#<?php echo $id; ?> li {
+				color: <?php the_field( 'text_color' ); ?>;
+			}
+		<?php endif; ?>
 
 	    /* Background image vars */
 	    <?php
