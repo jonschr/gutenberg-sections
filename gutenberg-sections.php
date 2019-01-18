@@ -30,6 +30,21 @@ define( 'GUTENBERG_SECTIONS', dirname( __FILE__ ) );
 // Define the version of the plugin
 define ( 'GUTENBERG_SECTIONS_VERSION', '0.8' );
 
+/**
+ * Temporary fix to Gutenberg bug
+ * https://github.com/WordPress/gutenberg/issues/12530
+ */
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', function ($content) {
+    
+    // bail if this has blocks
+    if (has_blocks() )
+        return $content;
+    
+    // apply the filter if it doesn't have blocks
+    return wpautop($content);
+});
+
 //////////////////////
 // COMMON FUNCTIONS //
 //////////////////////
