@@ -72,3 +72,27 @@
         line-height: 1.2em;
     }
 }
+
+ul.acf-radio-list li,
+ul.acf-checkbox-list li {
+    padding-left: 20px;
+
+    label {
+        display: block;
+        line-height: 1.1em;
+        margin-bottom: 7px;
+        float: left;
+        clear: both;
+        position: relative;
+
+        input {
+            position: absolute;
+            left: -20px;
+        }
+
+        small {
+            display: block;
+            line-height: 1.2em;
+        }
+    }
+}

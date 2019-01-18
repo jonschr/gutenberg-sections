@@ -69,11 +69,20 @@
 /* ==========================================================================
    Section defaults
    ========================================================================== */
+.gutenberg-section .content-wrap-outer {
+  max-width: 1060px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .gutenberg-section .content-wrap {
   margin: 0 auto;
   max-width: 1060px;
   position: relative;
   z-index: 20;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
 }
 
 .gutenberg-section .content-wrap > :last-child {
@@ -98,6 +107,36 @@
 .gutenberg-section.alignwide .content-wrap, .gutenberg-section.checkerboard .content-wrap {
   width: 702px;
   max-width: 100%;
+}
+
+/* ==========================================================================
+   Float section
+   ========================================================================== */
+.gutenberg-section.left-content-container-alignment .content-wrap {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.gutenberg-section.right-content-container-alignment .content-wrap {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.gutenberg-section.fullwidth-content-container-alignment .content-wrap-outer {
+  max-width: 100%;
+}
+
+.gutenberg-section.fullwidth-content-container-alignment .content-wrap-outer .content-wrap {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.gutenberg-section.no-padding .content-wrap-outer {
+  max-width: 100%;
+}
+
+.gutenberg-section.no-padding .content-wrap-outer .content-wrap {
+  padding: 0 !important;
 }
 
 @media (min-width: 1200px) {
@@ -659,6 +698,33 @@
 
 .acf-block-body.is-edit .acf-field .acf-input p.description {
   font-size: 13px;
+  line-height: 1.2em;
+}
+
+ul.acf-radio-list li,
+ul.acf-checkbox-list li {
+  padding-left: 20px;
+}
+
+ul.acf-radio-list li label,
+ul.acf-checkbox-list li label {
+  display: block;
+  line-height: 1.1em;
+  margin-bottom: 7px;
+  float: left;
+  clear: both;
+  position: relative;
+}
+
+ul.acf-radio-list li label input,
+ul.acf-checkbox-list li label input {
+  position: absolute;
+  left: -20px;
+}
+
+ul.acf-radio-list li label small,
+ul.acf-checkbox-list li label small {
+  display: block;
   line-height: 1.2em;
 }
 /*# sourceMappingURL=editor-style.css.map */

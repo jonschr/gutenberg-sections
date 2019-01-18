@@ -27,6 +27,11 @@ function gs_common_classes( $block ) {
 	$align_class = $block['align'] ? 'align' . $block['align'] : '';
 	array_push( $classes, $align_class );
 
+	$container_align_class = get_field( 'float_content' );
+	if ( $container_align_class )
+		array_push( $classes, $container_align_class );
+
+
 	/////////////////
 	// FULL HEIGHT //
 	/////////////////

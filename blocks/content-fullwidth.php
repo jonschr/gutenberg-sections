@@ -31,7 +31,7 @@ $classes = 'fullwidth ' . $classes;
 printf( '<section id="%s" class="%s">', $id, $classes );
 
 	// Content area
-	printf( '<div class="content-wrap">%s</div>', $content );
+	printf( '<div class="content-wrap-outer"><div class="content-wrap">%s</div></div>', $content );
 
 	// Output background image if there's one
 	gs_output_background_image( $block );

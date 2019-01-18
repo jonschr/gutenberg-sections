@@ -84,11 +84,20 @@ body.page-template-default.full-width-content main.content > .page > .entry-head
 /* ==========================================================================
    Section defaults
    ========================================================================== */
+.gutenberg-section .content-wrap-outer {
+  max-width: 1060px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .gutenberg-section .content-wrap {
   margin: 0 auto;
   max-width: 1060px;
   position: relative;
   z-index: 20;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
 }
 
 .gutenberg-section .content-wrap > :last-child {
@@ -113,6 +122,36 @@ body.page-template-default.full-width-content main.content > .page > .entry-head
 .gutenberg-section.alignwide .content-wrap, .gutenberg-section.checkerboard .content-wrap {
   width: 702px;
   max-width: 100%;
+}
+
+/* ==========================================================================
+   Float section
+   ========================================================================== */
+.gutenberg-section.left-content-container-alignment .content-wrap {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.gutenberg-section.right-content-container-alignment .content-wrap {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.gutenberg-section.fullwidth-content-container-alignment .content-wrap-outer {
+  max-width: 100%;
+}
+
+.gutenberg-section.fullwidth-content-container-alignment .content-wrap-outer .content-wrap {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.gutenberg-section.no-padding .content-wrap-outer {
+  max-width: 100%;
+}
+
+.gutenberg-section.no-padding .content-wrap-outer .content-wrap {
+  padding: 0 !important;
 }
 
 @media (min-width: 1200px) {

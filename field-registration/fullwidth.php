@@ -78,6 +78,7 @@ add_action( 'fullwidth_add_sections', 'gs_add_default_content', 10, 2 );
 // Alignment
 add_action( 'fullwidth_add_sections', 'gs_add_default_alignment_heading', 10, 2 );
 add_action( 'fullwidth_add_sections', 'gs_add_default_alignment', 10, 2 );
+add_action( 'fullwidth_add_sections', 'gs_add_container_alignment', 10, 2 );
 
 // Layout defaults
 add_action( 'fullwidth_add_sections', 'gs_add_default_layout_heading', 10, 2 );
