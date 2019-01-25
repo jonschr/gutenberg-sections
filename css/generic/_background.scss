@@ -4,14 +4,16 @@
 
 .gutenberg-section.has-background-image,
 .gutenberg-section.video {
-    h1,
-    h2,
-    h3,
-    h4,
-    p,
-    li,
-    a {
-        color: white;
+    &:not(.default-text-color) {
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        li,
+        a {
+            color: white;
+        }
     }
 
     .background-image {

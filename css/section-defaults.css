@@ -31,20 +31,20 @@ body.page-template-default.full-width-content main.content > .page > .entry-head
 /* ==========================================================================
    Background image
    ========================================================================== */
-.gutenberg-section.has-background-image h1,
-.gutenberg-section.has-background-image h2,
-.gutenberg-section.has-background-image h3,
-.gutenberg-section.has-background-image h4,
-.gutenberg-section.has-background-image p,
-.gutenberg-section.has-background-image li,
-.gutenberg-section.has-background-image a,
-.gutenberg-section.video h1,
-.gutenberg-section.video h2,
-.gutenberg-section.video h3,
-.gutenberg-section.video h4,
-.gutenberg-section.video p,
-.gutenberg-section.video li,
-.gutenberg-section.video a {
+.gutenberg-section.has-background-image:not(.default-text-color) h1,
+.gutenberg-section.has-background-image:not(.default-text-color) h2,
+.gutenberg-section.has-background-image:not(.default-text-color) h3,
+.gutenberg-section.has-background-image:not(.default-text-color) h4,
+.gutenberg-section.has-background-image:not(.default-text-color) p,
+.gutenberg-section.has-background-image:not(.default-text-color) li,
+.gutenberg-section.has-background-image:not(.default-text-color) a,
+.gutenberg-section.video:not(.default-text-color) h1,
+.gutenberg-section.video:not(.default-text-color) h2,
+.gutenberg-section.video:not(.default-text-color) h3,
+.gutenberg-section.video:not(.default-text-color) h4,
+.gutenberg-section.video:not(.default-text-color) p,
+.gutenberg-section.video:not(.default-text-color) li,
+.gutenberg-section.video:not(.default-text-color) a {
   color: white;
 }
 

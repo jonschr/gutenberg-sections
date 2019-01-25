@@ -109,19 +109,58 @@ function gs_add_default_color_field_background_color_opacity( $key, $prefix ) {
 			'parent' => $key,
 			'instructions' => '',
 			'required' => 0,
-			// 'conditional_logic' => array(
-			// 	array(
-			// 		array(
-			// 			'field' => $prefix . 'M3Zsa6XBo3G63Cg',
-			// 			'operator' => '!=empty',
-			// 		),
-			// 	),
-			// ),
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => $prefix . 'M3Zsa6XBo3G63Cg',
+						'operator' => '!=empty',
+					),
+				),
+				array(
+					array(
+						'field' => $prefix . 'AF49yue6j7Rut7Q',
+						'operator' => '!=empty',
+					),
+				),
+			),
 			'default_value' => '',
 			'min' => 0,
 			'max' => 100,
 			'step' => 10,
 			'append' => '%',
+		),
+	));
+}
+
+// Text color stays default
+function gs_add_default_color_field_maintain_default_text_color( $key, $prefix ) {
+	acf_add_local_field( array(
+		array(
+			'key' => $prefix . 'oj469eod3ZVK8Ro',
+			'label' => 'Maintain default text colors',
+			'name' => 'default_text_color',
+			'type' => 'true_false',
+			'parent' => $key,
+			'ui' => 1,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => $prefix . 'M3Zsa6XBo3G63Cg',
+						'operator' => '!=empty',
+					),
+				),
+				array(
+					array(
+						'field' => $prefix . 'AF49yue6j7Rut7Q',
+						'operator' => '!=empty',
+					),
+				),
+			),
+			'default_value' => '',
 		),
 	));
 }
@@ -137,7 +176,15 @@ function gs_add_default_color_field_text_color( $key, $prefix ) {
 			'parent' => $key,
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => $prefix . 'oj469eod3ZVK8Ro',
+						'operator' => '!=',
+						'value' => '1',
+					),
+				),
+			),
 			'default_value' => '',
 		),
 	));

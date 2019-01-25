@@ -57,6 +57,16 @@ function gs_common_classes( $block ) {
 	if ( $background_image )
 		array_push( $classes, 'has-background-image' );
 
+
+	///////////////////////////////
+	// MAINTAIN BACKGROUND COLOR //
+	///////////////////////////////
+
+	$default_text_color = get_field( 'default_text_color' );
+	
+	if ( $default_text_color == '1' )
+		array_push( $classes, 'default-text-color' );
+
 	//////////////////////
 	// BACKGROUND VIDEO //
 	//////////////////////

@@ -106,6 +106,7 @@ add_action( 'featureditems_add_sections', 'gs_add_default_color_field_background
 add_action( 'featureditems_add_sections', 'gs_add_default_color_field_fixed_position_background', 10, 2 );
 add_action( 'featureditems_add_sections', 'gs_add_default_color_field_background_color', 10, 2 );
 add_action( 'featureditems_add_sections', 'gs_add_default_color_field_background_color_opacity', 10, 2 );
+add_action( 'featureditems_add_sections', 'gs_add_default_color_field_maintain_default_text_color', 10, 2 );
 add_action( 'featureditems_add_sections', 'gs_add_default_color_field_text_color', 10, 2 );
 add_action( 'featureditems_add_sections', 'gs_add_custom_color_field_featured_text_color', 10, 2 );
 add_action( 'featureditems_add_sections', 'gs_add_custom_color_field_featured_background_color', 10, 2 );
@@ -114,10 +115,10 @@ add_action( 'featureditems_add_sections', 'gs_add_custom_color_field_featured_li
 // Video defaults
 add_action( 'featureditems_add_sections', 'gs_add_default_video_heading', 10, 2 );
 add_action( 'featureditems_add_sections', 'gs_add_default_video_files_or_url', 10, 2 );
-add_action( 'featureditems_add_sections', 'gs_add_default_video_image_fallback', 10, 2 );
 add_action( 'featureditems_add_sections', 'gs_add_default_video_video_url', 10, 2 );
 add_action( 'featureditems_add_sections', 'gs_add_default_video_video_mp4', 10, 2 );
 add_action( 'featureditems_add_sections', 'gs_add_default_video_video_webm', 10, 2 );
+add_action( 'featureditems_add_sections', 'gs_add_default_video_image_fallback', 10, 2 );
 add_action( 'featureditems_add_sections', 'gs_add_default_video_heading', 10, 2 );
 add_action( 'featureditems_add_sections', 'gs_add_default_video_heading', 10, 2 );
 
