@@ -28,7 +28,7 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'GUTENBERG_SECTIONS', dirname( __FILE__ ) );
 
 // Define the version of the plugin
-define ( 'GUTENBERG_SECTIONS_VERSION', '0.8' );
+define ( 'GUTENBERG_SECTIONS_VERSION', '0.8.1' );
 
 /**
  * Temporary fix to Gutenberg bug
