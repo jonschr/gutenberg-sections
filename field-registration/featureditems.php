@@ -179,7 +179,7 @@ function gs_add_custom_content_featureditems_content_items( $key, $prefix ) {
             'min' => 3,
             'max' => 0,
             'layout' => 'block',
-            'button_label' => '',
+            'button_label' => 'Add featured item',
             'sub_fields' => array(
                 array(
                     'key' => $prefix . 'KBnKU8962rX7smj',
