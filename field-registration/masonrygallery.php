@@ -108,4 +108,3 @@ add_action( 'masonrygallery_add_sections', 'gs_add_default_video_video_webm', 10
 add_action( 'masonrygallery_add_sections', 'gs_add_default_video_image_fallback', 10, 2 );
 add_action( 'masonrygallery_add_sections', 'gs_add_default_video_heading', 10, 2 );
 add_action( 'masonrygallery_add_sections', 'gs_add_default_video_heading', 10, 2 );
-
