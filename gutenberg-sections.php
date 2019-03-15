@@ -98,6 +98,7 @@ if( class_exists('ACF') && class_exists( 'acf_pro_updates' ) ) :
 
     // Set up the default fields
     require_once( 'field-registration/default_groups/default_content.php' );
+    require_once( 'field-registration/default_groups/default_content_above_below.php' );
     require_once( 'field-registration/default_groups/default_alignment.php' );
     require_once( 'field-registration/default_groups/default_layout.php' );
     require_once( 'field-registration/default_groups/default_color.php' );

@@ -71,19 +71,17 @@ function register_section_featureditems() {
 // DEFINE THE SPECIFIC FIELDS THAT WILL BE USED //
 //////////////////////////////////////////////////
 
+// Content above and below
+add_action( 'featureditems_add_sections', 'gs_add_custom_featureditems_content_heading', 10, 2 );
+add_action( 'featureditems_add_sections', 'gs_add_default_content_above_and_below', 10, 2 );
+add_action( 'featureditems_add_sections', 'gs_add_default_content_content_above', 10, 2 );
+add_action( 'featureditems_add_sections', 'gs_add_default_content_content_below', 10, 2 );
+
 // Featured items
 add_action( 'featureditems_add_sections', 'gs_add_custom_featureditems_heading', 10, 2 );
 add_action( 'featureditems_add_sections', 'gs_add_custom_content_featureditems_content_range', 10, 2 );
 add_action( 'featureditems_add_sections', 'gs_add_custom_content_featureditems_content_items', 10, 2 );
 
-// Content
-add_action( 'featureditems_add_sections', 'gs_add_default_content_heading', 10, 2 );
-// add_action( 'featureditems_add_sections', 'gs_add_default_content', 10, 2 );
-
-	// Content additions
-	add_action( 'featureditems_add_sections', 'gs_add_custom_content_featureditems_above_and_below', 10, 2 );
-	add_action( 'featureditems_add_sections', 'gs_add_custom_content_featureditems_content_above', 10, 2 );
-	add_action( 'featureditems_add_sections', 'gs_add_custom_content_featureditems_content_below', 10, 2 );
 
 // Alignment defaults
 add_action( 'featureditems_add_sections', 'gs_add_default_alignment_heading', 10, 2 );
@@ -125,6 +123,32 @@ add_action( 'featureditems_add_sections', 'gs_add_default_video_heading', 10, 2 
 ////////////////////////////////////
 // FEATURED ITEMS REPEATER FIELDS //
 ////////////////////////////////////
+
+function gs_add_custom_featureditems_content_heading( $key, $prefix ) {
+
+	// Content fields
+	acf_add_local_field(array(
+		array(
+			'key' => $prefix . 'My9ycvToy99p8G6j',
+			'label' => 'Content above and below the featured items',
+			'name' => '',
+			'type' => 'accordion',
+			'parent' => $key,
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'open' => 0,
+			'multi_expand' => 0,
+			'endpoint' => 0,
+		),
+	));
+
+}
 
 function gs_add_custom_featureditems_heading( $key, $prefix ) {
 
@@ -211,81 +235,6 @@ function gs_add_custom_content_featureditems_content_items( $key, $prefix ) {
                 ),
             ),
         ),
-	));
-}
-
-///////////////////////////////////
-// FEATURED ITEMS CONTENT FIELDS //
-///////////////////////////////////
-
-function gs_add_custom_content_featureditems_above_and_below( $key, $prefix ) {
-	acf_add_local_field(array(
-		array(
-			'key' => $prefix . '43wHjyj7Vxgqd24',
-			'label' => '',
-			'name' => 'above_and_below',
-			'type' => 'checkbox',
-			'choices' => array(
-				'above'	=> 'Content above the featured items layout',
-				'below'	=> 'Content below the featured items layout',
-			),
-			'parent' => $key,
-			'default_value' => '',
-			'ui' => 1,
-		),
-	));
-}
-
-function gs_add_custom_content_featureditems_content_above( $key, $prefix ) {
-	acf_add_local_field(array(
-		array(
-			'key' => $prefix . 'T77X2DVne4R2Dap',
-			'label' => 'Content above',
-			'name' => 'content_above',
-			'type' => 'wysiwyg',
-			'parent' => $key,
-			'instructions' => '',
-			'required' => 0,
-			'tabs' => 'all',
-			'toolbar' => 'full',
-			'media_upload' => 1,
-			'delay' => 0,
-			'conditional_logic' => array(
-				array(
-					array(
-						'key' => $prefix . '43wHjyj7Vxgqd24',
-						'operator' => '==',
-						'value' => 'above',
-					),
-				),
-			),
-		),
-	));
-}
-
-function gs_add_custom_content_featureditems_content_below( $key, $prefix ) {
-	acf_add_local_field(array(
-		array(
-			'key' => $prefix . '72HwdTK38aJd6wA',
-			'label' => 'Content below',
-			'name' => 'content_below',
-			'type' => 'wysiwyg',
-			'conditional_logic' => array(
-				array(
-					array(
-						'key' => $prefix . '43wHjyj7Vxgqd24',
-						'operator' => '==',
-						'value' => 'below',
-					),
-				),
-			),
-			'parent' => $key,
-			'required' => 0,
-			'tabs' => 'all',
-			'toolbar' => 'full',
-			'media_upload' => 1,
-			'delay' => 0,
-		),
 	));
 }
 
