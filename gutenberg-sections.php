@@ -108,6 +108,7 @@ if( class_exists('ACF') && class_exists( 'acf_pro_updates' ) ) :
     require_once( 'field-registration/twocolumn.php' );
     require_once( 'field-registration/checkerboard.php' );
     require_once( 'field-registration/featureditems.php' );
+    require_once( 'field-registration/masonrygallery.php' );
 
     /////////////////////////////
     // REGISTER BLOCK CATEGORY //
