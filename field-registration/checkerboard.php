@@ -118,19 +118,17 @@ add_action( 'checkerboard_add_sections', 'gs_add_default_color_field_text_color'
 // Color heading
 function gs_add_checkerboard_custom_color_heading( $key, $prefix ) {
 	acf_add_local_field( array(
-		array(
-			'key' => $prefix . 'XwD94xiL6y8AM6Y',
-			'label' => 'Color',
-			'name' => '',
-			'type' => 'accordion',
-			'parent' => $key,
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'open' => 0,
-			'multi_expand' => 0,
-			'endpoint' => 0,
-		),
+		'key' => $prefix . 'XwD94xiL6y8AM6Y',
+		'label' => 'Color',
+		'name' => '',
+		'type' => 'accordion',
+		'parent' => $key,
+		'instructions' => '',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'open' => 0,
+		'multi_expand' => 0,
+		'endpoint' => 0,
 	));
 }
 
@@ -140,80 +138,68 @@ function gs_add_checkerboard_custom_color_heading( $key, $prefix ) {
 
 // Checkerboard alignment
 function gs_add_custom_checkerboard_alignment( $key, $prefix ) {
-
 	acf_add_local_field(array(
-		array(
-			'key' => $prefix . 'CwNLx7Z6GK64r6V',
-			'label' => 'Checkerboard alignment',
-			'name' => 'alignment',
-			'type' => 'radio',
-			'parent' => $key,
-			'instructions' => '',
-			'required' => 1,
-			'conditional_logic' => 0,
-			'choices' => array (
-				'content_left' => 'Content left, image right',
-				'content_right' => 'Image left, content right',
-			),
-			'allow_null' => 0,
-			'other_choice' => 0,
-			'save_other_choice' => 0,
-			'default_value' => 'content_left',
-			'layout' => 'horizontal',
+		'key' => $prefix . 'CwNLx7Z6GK64r6V',
+		'label' => 'Checkerboard alignment',
+		'name' => 'alignment',
+		'type' => 'radio',
+		'parent' => $key,
+		'instructions' => '',
+		'required' => 1,
+		'conditional_logic' => 0,
+		'choices' => array (
+			'content_left' => 'Content left, image right',
+			'content_right' => 'Image left, content right',
 		),
+		'allow_null' => 0,
+		'other_choice' => 0,
+		'save_other_choice' => 0,
+		'default_value' => 'content_left',
+		'layout' => 'horizontal',
 	));
-
 }
 
 // Checkerboard content
 function gs_add_custom_checkerboard_content( $key, $prefix ) {
-
 	acf_add_local_field(array(
-		array(
-			'key' => $prefix . 'uwXzbe372nV3Fd4',
-			'label' => '',
-			'name' => 'content',
-			'type' => 'wysiwyg',
-			'parent' => $key,
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '50',
-			),
-			'default_value' => '',
-			'tabs' => 'all',
-			'toolbar' => 'full',
-			'media_upload' => 1,
-			'delay' => 0,
+		'key' => $prefix . 'uwXzbe372nV3Fd4',
+		'label' => '',
+		'name' => 'content',
+		'type' => 'wysiwyg',
+		'parent' => $key,
+		'instructions' => '',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'wrapper' => array(
+			'width' => '50',
 		),
+		'default_value' => '',
+		'tabs' => 'all',
+		'toolbar' => 'full',
+		'media_upload' => 1,
+		'delay' => 0,
 	));
-
 }
 
 // Checkerboard image
 function gs_add_custom_checkerboard_image( $key, $prefix ) {
-
 	acf_add_local_field(array(
-		array(
-			'key' => $prefix . '9m8G96QRNWX3vLH',
-			'label' => '',
-			'name' => 'image',
-			'type' => 'image',
-			'parent' => $key,
-			'instructions' => 'An image to place next to the content',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'return_format' => 'url',
-			'preview_size' => 'large',
-			'library' => 'all',
-			'wrapper' => array(
-				'width' => '50',
-			),
-			'min_width' => '800',
-			'min_height' => '800',
-			'mime_types' => 'jpg',
+		'key' => $prefix . '9m8G96QRNWX3vLH',
+		'label' => '',
+		'name' => 'image',
+		'type' => 'image',
+		'parent' => $key,
+		'instructions' => 'An image to place next to the content',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'return_format' => 'url',
+		'preview_size' => 'large',
+		'library' => 'all',
+		'wrapper' => array(
+			'width' => '50',
 		),
+		'min_width' => '800',
+		'min_height' => '800',
+		'mime_types' => 'jpg',
 	));
-
 }

@@ -128,24 +128,22 @@ function gs_add_custom_featureditems_content_heading( $key, $prefix ) {
 
 	// Content fields
 	acf_add_local_field(array(
-		array(
-			'key' => $prefix . 'My9ycvToy99p8G6j',
-			'label' => 'Content above and below the featured items',
-			'name' => '',
-			'type' => 'accordion',
-			'parent' => $key,
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'open' => 0,
-			'multi_expand' => 0,
-			'endpoint' => 0,
+		'key' => $prefix . 'My9ycvToy99p8G6j',
+		'label' => 'Content above and below the featured items',
+		'name' => '',
+		'type' => 'accordion',
+		'parent' => $key,
+		'instructions' => '',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => '',
 		),
+		'open' => 0,
+		'multi_expand' => 0,
+		'endpoint' => 0,
 	));
 
 }
@@ -154,87 +152,81 @@ function gs_add_custom_featureditems_heading( $key, $prefix ) {
 
 	// Content fields
 	acf_add_local_field(array(
-		array(
-			'key' => $prefix . 'mw6Nua3ov8E3n8u',
-			'label' => 'Featured Items',
-			'name' => '',
-			'type' => 'accordion',
-			'parent' => $key,
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'open' => 0,
-			'multi_expand' => 0,
-			'endpoint' => 0,
-		),
+		'key' => $prefix . 'mw6Nua3ov8E3n8u',
+		'label' => 'Featured Items',
+		'name' => '',
+		'type' => 'accordion',
+		'parent' => $key,
+		'instructions' => '',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'open' => 0,
+		'multi_expand' => 0,
+		'endpoint' => 0,
 	));
 
 }
 
 function gs_add_custom_content_featureditems_content_range( $key, $prefix ) {
 	acf_add_local_field(array(
-        array(
-			'key' => $prefix . '264EDKQ2cmZ3bpN',
-			'label' => 'Columns',
-			'name' => 'columns',
-			'type' => 'range',
-            'parent' => $key,
-            'min' => '1',
-            'max' => '10',
-            'step' => '1',
-			'default_value' => '3',
-			'wrapper' => array(
-				'width' => '100',
-			),
+		'key' => $prefix . '264EDKQ2cmZ3bpN',
+		'label' => 'Columns',
+		'name' => 'columns',
+		'type' => 'range',
+		'parent' => $key,
+		'min' => '1',
+		'max' => '10',
+		'step' => '1',
+		'default_value' => '3',
+		'wrapper' => array(
+			'width' => '100',
 		),
     ));
 }
 
 function gs_add_custom_content_featureditems_content_items( $key, $prefix ) {
 	acf_add_local_field(array(
-		array(
-            'key' => $prefix . '5c3d94fe69220',
-            'label' => 'Featured item',
-            'name' => 'featureditem',
-            'type' => 'repeater',
-            'instructions' => '',
-            'collapsed' => '',
-            'parent' => $key,
-            'min' => 3,
-            'max' => 0,
-            'layout' => 'block',
-            'button_label' => 'Add featured item',
-            'sub_fields' => array(
-                array(
-                    'key' => $prefix . 'KBnKU8962rX7smj',
-                    'label' => 'Featured Item Content',
-                    'name' => 'content',
-                    'type' => 'wysiwyg',
-                    'parent' => $prefix . '5c3d94fe69220',
-                    'instructions' => 'If you use headings in this area, you\'ll want to start with a heading level three.',
-					'media_upload' => 1,
-                    'delay' => 0,
-                    'wrapper' => array(
-                        'width' => '60',
-                    ),
-                ),
-                array(
-                    'key' => $prefix . 'koQNTFC634kc3g4',
-                    'label' => 'Featured Item Link',
-                    'name' => 'link',
-                    'type' => 'url',
-                    'parent' => $prefix . '5c3d94fe69220',
-                    'instructions' => 'If you add a link here, it will link <em>all</em> of the text in an item to your URL. If you\'d prefer a button, simply insert that in the content area instead.',
-                    'required' => 0,
-                    'conditional_logic' => 0,
-                    'default_value' => '',
-                    'placeholder' => '',
-                    'wrapper' => array(
-                        'width' => '40',
-                    ),
-                ),
-            ),
-        ),
+		'key' => $prefix . '5c3d94fe69220',
+		'label' => 'Featured item',
+		'name' => 'featureditem',
+		'type' => 'repeater',
+		'instructions' => '',
+		'collapsed' => '',
+		'parent' => $key,
+		'min' => 3,
+		'max' => 0,
+		'layout' => 'block',
+		'button_label' => 'Add featured item',
+		'sub_fields' => array(
+			array(
+				'key' => $prefix . 'KBnKU8962rX7smj',
+				'label' => 'Featured Item Content',
+				'name' => 'content',
+				'type' => 'wysiwyg',
+				'parent' => $prefix . '5c3d94fe69220',
+				'instructions' => 'If you use headings in this area, you\'ll want to start with a heading level three.',
+				'media_upload' => 1,
+				'delay' => 0,
+				'wrapper' => array(
+					'width' => '60',
+				),
+			),
+			array(
+				'key' => $prefix . 'koQNTFC634kc3g4',
+				'label' => 'Featured Item Link',
+				'name' => 'link',
+				'type' => 'url',
+				'parent' => $prefix . '5c3d94fe69220',
+				'instructions' => 'If you add a link here, it will link <em>all</em> of the text in an item to your URL. If you\'d prefer a button, simply insert that in the content area instead.',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'default_value' => '',
+				'placeholder' => '',
+				'wrapper' => array(
+					'width' => '40',
+				),
+			),
+		),
 	));
 }
 
@@ -246,25 +238,23 @@ function gs_add_custom_content_featureditems_orphan_alignment( $key, $prefix ) {
 	
 	// orphan alignment
 	acf_add_local_field(array(
-		array(
-			'key' => $prefix . 'CwNLx7Z6GK64r6V',
-			'label' => 'Orphan alignment',
-			'name' => 'orphan_alignment',
-			'type' => 'radio',
-			'parent' => $key,
-			'instructions' => 'How should "leftover" featured items be aligned?',
-			'required' => 1,
-			'conditional_logic' => 0,
-			'choices' => array (
-				'orphans_left' => 'Align orphans left',
-				'orphans_center' => 'Align orphans center',
-				'orphans_right' => 'Align orphans right',
-			),
-			'allow_null' => 0,
-			'other_choice' => 0,
-			'save_other_choice' => 0,
-			'default_value' => 'orphans_left',
+		'key' => $prefix . 'CwNLx7Z6GK64r6V',
+		'label' => 'Orphan alignment',
+		'name' => 'orphan_alignment',
+		'type' => 'radio',
+		'parent' => $key,
+		'instructions' => 'How should "leftover" featured items be aligned?',
+		'required' => 1,
+		'conditional_logic' => 0,
+		'choices' => array (
+			'orphans_left' => 'Align orphans left',
+			'orphans_center' => 'Align orphans center',
+			'orphans_right' => 'Align orphans right',
 		),
+		'allow_null' => 0,
+		'other_choice' => 0,
+		'save_other_choice' => 0,
+		'default_value' => 'orphans_left',
 	));
 }
 
@@ -275,50 +265,44 @@ function gs_add_custom_content_featureditems_orphan_alignment( $key, $prefix ) {
 // Featured items text color 
 function gs_add_custom_color_field_featured_text_color( $key, $prefix ) {
 	acf_add_local_field( array(
-		array(
-			'key' => $prefix . 'MDh32N2Yov2qL6f',
-			'label' => 'Featured item text color',
-			'name' => 'featured_text_color',
-			'type' => 'color_picker',
-			'parent' => $key,
-			'instructions' => 'The color of the text inside each featured item box',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'default_value' => '',
-		),
+		'key' => $prefix . 'MDh32N2Yov2qL6f',
+		'label' => 'Featured item text color',
+		'name' => 'featured_text_color',
+		'type' => 'color_picker',
+		'parent' => $key,
+		'instructions' => 'The color of the text inside each featured item box',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'default_value' => '',
 	));
 }
 
 // Featured items background color 
 function gs_add_custom_color_field_featured_background_color( $key, $prefix ) {
 	acf_add_local_field( array(
-		array(
-			'key' => $prefix . '33N2as2UtVkHw6t',
-			'label' => 'Featured item background color',
-			'name' => 'featured_background_color',
-			'type' => 'color_picker',
-			'parent' => $key,
-			'instructions' => 'The color of the background inside each featured item box',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'default_value' => '',
-		),
+		'key' => $prefix . '33N2as2UtVkHw6t',
+		'label' => 'Featured item background color',
+		'name' => 'featured_background_color',
+		'type' => 'color_picker',
+		'parent' => $key,
+		'instructions' => 'The color of the background inside each featured item box',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'default_value' => '',
 	));
 }
 
 // Featured items background color 
 function gs_add_custom_color_field_featured_link_color( $key, $prefix ) {
 	acf_add_local_field( array(
-		array(
-			'key' => $prefix . 'xUpyD6hGqW9284f',
-			'label' => 'Featured item link color',
-			'name' => 'featured_link_color',
-			'type' => 'color_picker',
-			'parent' => $key,
-			'instructions' => 'The color of any links inside the featured items',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'default_value' => '',
-		),
+		'key' => $prefix . 'xUpyD6hGqW9284f',
+		'label' => 'Featured item link color',
+		'name' => 'featured_link_color',
+		'type' => 'color_picker',
+		'parent' => $key,
+		'instructions' => 'The color of any links inside the featured items',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'default_value' => '',
 	));
 }
