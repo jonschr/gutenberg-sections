@@ -7,12 +7,18 @@ function gs_output_background_video( $block ) {
 	$video_mp4 = get_field( 'video_mp4' );
 	$video_webm = get_field( 'video_webm' );
 	$image_fallback = get_field( 'image_fallback' );
+	$image_fallback_url = $image_fallback['url'];
 
 	// Output the video background
 	if ( $video_url || $video_mp4 || $video_webm ) {
 
-		// The video itself
-		printf( '<video class="background_video_the_video" autoplay muted loop playsinline poster="%s" preload="auto" class="video-playing">', $image_fallback );
+		// The video itself, if there's an image
+		if ( $image_fallback_url )
+			printf( '<video class="background_video_the_video" autoplay muted loop playsinline poster="%s" preload="auto" class="video-playing">', $image_fallback_url );
+
+		// The video itself if there's not an image
+		if ( !$image_fallback )
+			echo '<video class="background_video_the_video" autoplay muted loop playsinline preload="auto" class="video-playing">';
 
 	        if ( $video_url )
 	            printf( '<source src="%s" type="video/mp4">', $video_url );
@@ -27,5 +33,6 @@ function gs_output_background_video( $block ) {
 
 		// The color overlay
 		echo '<div class="color-overlay"></div>';
+
 	}
 }
