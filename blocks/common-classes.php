@@ -6,8 +6,8 @@ function gs_common_classes( $block ) {
 	// SET UP //
 	////////////
 
-	if ( !$classes )
-		$classes = array();
+	// if ( !$classes )
+	$classes = array();
 
 	array_push( $classes, 'gutenberg-section' );
 
