@@ -18,61 +18,50 @@
 // @import "generic/editor-remove-label-on-main-content";
 @import "generic/editor-image-uploader";
 
+//* Move the sections closer together
 .gutenberg-section {
     transform: translateY(-16px);
     margin-bottom: -31px;
 }
 
-.acf-block-body.is-edit {
+//* Style acf blocks
+.acf-block-body {
     padding: 20px;
-    border: 10px solid rgba(#4ab866, 0.2);
+    border: 10px solid #efefef;
     transform: translateY(-16px);
-    margin-bottom: -32px;
-    transition: .5s border-color ease;
+    margin-bottom: -31px;
 
     &:hover {
-        // border-color: #eff9f1;
-        border-color: rgba(#4ab866, 0.5);
-    }
-
-    .acf-tab-group {
-        padding-left: 10px;
-
-        // padding-top: 10px;
-   
-    }
-
-    .acf-block-fields {
-        border: none;
-    }
-
-    > .acf-tab-wrap {
-        background: transparent;
-    }
-
-    .acf-label.acf-accordion-title {
-        label {
-            font-size: 20px;
-        }
-    }
-
-    .acf-field .acf-label {
-        label {
-            font-weight: normal;
-            font-size: 16px;
-        }
-    }
-
-    .acf-field.acf-accordion .acf-accordion-title {
-        padding: 17px !important;
-    }
-
-    .acf-field .acf-input p.description {
-        font-size: 13px;
-        line-height: 1.2em;
+        border-color: rgba(#0071a1, 0.2);
+        outline: 1px solid #0071a1;
+        margin-left: 1px;
+        margin-right: 1px;
     }
 }
 
+//* Style acf blocks while active to have a darker border and an outline
+.is-selected .acf-block-body {
+    padding: 20px;
+    border: 10px solid rgba(#0071a1, 0.2);
+    transition: .5s border-color ease;
+    border-color: rgba(#0071a1, 0.5);
+}
+
+//* Remove the blue outline, as we're applying a bigger one with more accurate click zone
+.editor-block-list__layout .editor-block-list__block.is-hovered > .editor-block-list__block-edit:before {
+    outline: none !important;
+}
+
+//* Fuzzy matching for blocks that are ACF, moving the outline to somewhere more appropriate
+.editor-block-list__layout .editor-block-list__block {
+    &.is-selected[data-type^="acf"] {
+        > .editor-block-list__block-edit:before {
+            margin-bottom: 31px;
+        }
+    }
+}
+
+//* Making the text smaller in radio buttons/checkboxes
 ul.acf-radio-list li,
 ul.acf-checkbox-list li {
     padding-left: 20px;
