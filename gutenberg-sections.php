@@ -28,7 +28,7 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'GUTENBERG_SECTIONS', dirname( __FILE__ ) );
 
 // Define the version of the plugin
-define ( 'GUTENBERG_SECTIONS_VERSION', '0.9.4' );
+define ( 'GUTENBERG_SECTIONS_VERSION', '0.9.5' );
 
 /**
  * Add a notification if ACF isn't installed and active
