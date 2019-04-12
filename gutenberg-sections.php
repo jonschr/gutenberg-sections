@@ -4,7 +4,7 @@
     Plugin URI: https://elod.in
     GitHub Plugin URI: https://github.com/jonschr/gutenberg-sections
     Description: Preset layouts for Gutenberg, using ACF for rendering
-    Version: 0.9.3
+    Version: 0.9.5
     Author: Jon Schroeder
     Author URI: https://elod.in
 
