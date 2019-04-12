@@ -44,13 +44,13 @@ function register_section_slider() {
 	do_action( $prefix . 'add_sections', $key, $prefix );
 
 	/**
-	 * Register the two column section
+	 * Register the slider
 	 */
 	if( function_exists('acf_add_local_field_group') ):
 
 		acf_add_local_field_group(array(
 			'key' => $key,
-			'title' => 'Block: Two Column',
+			'title' => 'Block: Slider',
 			'fields' => array(),
 			'location' => array(
 				array(
@@ -71,22 +71,14 @@ function register_section_slider() {
 // DEFINE THE SPECIFIC FIELDS THAT WILL BE USED //
 //////////////////////////////////////////////////
 
-// Content above and below
-add_action( 'slider_add_sections', 'gs_add_custom_slider_content_heading', 10, 2 );
-add_action( 'slider_add_sections', 'gs_add_default_content_above_and_below', 10, 2 );
-add_action( 'slider_add_sections', 'gs_add_default_content_content_above', 10, 2 );
-add_action( 'slider_add_sections', 'gs_add_default_content_content_below', 10, 2 );
-
-// Featured items
+// Content
 add_action( 'slider_add_sections', 'gs_add_custom_slider_heading', 10, 2 );
-add_action( 'slider_add_sections', 'gs_add_custom_content_slider_content_range', 10, 2 );
 add_action( 'slider_add_sections', 'gs_add_custom_content_slider_content_items', 10, 2 );
 
-
-// Alignment defaults
+// Alignment
 add_action( 'slider_add_sections', 'gs_add_default_alignment_heading', 10, 2 );
-add_action( 'slider_add_sections', 'gs_add_custom_content_slider_orphan_alignment', 10, 2 );
 add_action( 'slider_add_sections', 'gs_add_default_alignment', 10, 2 );
+add_action( 'slider_add_sections', 'gs_add_container_alignment', 10, 2 );
 
 // Layout defaults
 add_action( 'slider_add_sections', 'gs_add_default_layout_heading', 10, 2 );
@@ -106,9 +98,6 @@ add_action( 'slider_add_sections', 'gs_add_default_color_field_background_color'
 add_action( 'slider_add_sections', 'gs_add_default_color_field_background_color_opacity', 10, 2 );
 add_action( 'slider_add_sections', 'gs_add_default_color_field_maintain_default_text_color', 10, 2 );
 add_action( 'slider_add_sections', 'gs_add_default_color_field_text_color', 10, 2 );
-add_action( 'slider_add_sections', 'gs_add_custom_color_field_featured_text_color', 10, 2 );
-add_action( 'slider_add_sections', 'gs_add_custom_color_field_featured_background_color', 10, 2 );
-add_action( 'slider_add_sections', 'gs_add_custom_color_field_featured_link_color', 10, 2 );
 
 // Video defaults
 add_action( 'slider_add_sections', 'gs_add_default_video_heading', 10, 2 );
@@ -119,3 +108,74 @@ add_action( 'slider_add_sections', 'gs_add_default_video_video_webm', 10, 2 );
 add_action( 'slider_add_sections', 'gs_add_default_video_image_fallback', 10, 2 );
 add_action( 'slider_add_sections', 'gs_add_default_video_heading', 10, 2 );
 add_action( 'slider_add_sections', 'gs_add_default_video_heading', 10, 2 );
+
+///////////////////
+// SLIDER FIELDS //
+///////////////////
+
+
+function gs_add_custom_slider_heading( $key, $prefix ) {
+
+	// Content fields
+	acf_add_local_field(array(
+		'key' => $prefix . 'vwMDe8JY98tsz82VR',
+		'label' => 'Slides',
+		'name' => '',
+		'type' => 'accordion',
+		'parent' => $key,
+		'instructions' => '',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'open' => 0,
+		'multi_expand' => 0,
+		'endpoint' => 0,
+	));
+
+}
+
+function gs_add_custom_content_slider_content_items( $key, $prefix ) {
+	acf_add_local_field(array(
+		'key' => $prefix . 'PF7nC9KB2v7dTV6ri',
+		'label' => '',
+		'name' => 'slides',
+		'type' => 'repeater',
+		'instructions' => '',
+		'collapsed' => '',
+		'parent' => $key,
+		'min' => 1,
+		'max' => 0,
+		'layout' => 'block',
+		'button_label' => 'Add slide',
+		'sub_fields' => array(
+			array(
+				'key' => $prefix . '866mqytNvHkY8Qxo81',
+				'label' => 'Featured Item Content',
+				'name' => 'content',
+				'type' => 'wysiwyg',
+				'parent' => $prefix . 'PF7nC9KB2v7dTV6ri',
+				'media_upload' => 1,
+				'delay' => 0,
+				'wrapper' => array(
+					'width' => '60',
+				),
+			),
+			array(
+				'key' => $prefix . '866mqytNvHkY8Qxo82',
+				'label' => 'Slide background image',
+				'name' => 'image',
+                'type' => 'image',
+                'min-width' => '1600',
+                'min-height' => '1000',
+                'mime_types' => 'jpg',
+				'parent' => $prefix . 'PF7nC9KB2v7dTV6ri',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'default_value' => '',
+				'placeholder' => '',
+				'wrapper' => array(
+					'width' => '40',
+				),
+			),
+		),
+	));
+}

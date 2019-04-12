@@ -4,7 +4,7 @@
     Plugin URI: https://elod.in
     GitHub Plugin URI: https://github.com/jonschr/gutenberg-sections
     Description: Preset layouts for Gutenberg, using ACF for rendering
-    Version: 0.9.5
+    Version: 0.9.6
     Author: Jon Schroeder
     Author URI: https://elod.in
 
@@ -106,7 +106,7 @@ if( class_exists('ACF') && class_exists( 'acf_pro_updates' ) ) :
 
     // Register the fields and set up the acf blocks
     require_once( 'field-registration/fullwidth.php' );
-    // require_once( 'field-registration/slider.php' );
+    require_once( 'field-registration/slider.php' );
     require_once( 'field-registration/twocolumn.php' );
     require_once( 'field-registration/checkerboard.php' );
     require_once( 'field-registration/featureditems.php' );
@@ -160,9 +160,11 @@ if( class_exists('ACF') && class_exists( 'acf_pro_updates' ) ) :
 
         // Plugin styles
         wp_enqueue_style( 'gs-section-defaults', plugin_dir_url( __FILE__ ) . 'css/section-defaults.css', array(), GUTENBERG_SECTIONS_VERSION, 'screen' );
-        
-        // Script
-        // wp_register_script( 'slick-init', plugin_dir_url( __FILE__ ) . 'js/slick-init.js', array( 'slick-main' ), GUTENBERG_SECTIONS_VERSION, true );
+
+        // Slick
+        wp_register_script( 'gs-slick-main-script', plugin_dir_url( __FILE__ ) . 'slick/slick.min.js', array( 'jquery' ), GUTENBERG_SECTIONS_VERSION, true );
+        wp_register_style( 'gs-slick-main-style', plugin_dir_url( __FILE__ ) . 'slick/slick.css', array(), GUTENBERG_SECTIONS_VERSION, 'screen' );
+        wp_register_style( 'gs-slick-main-theme', plugin_dir_url( __FILE__ ) . 'slick/slick-theme.css', array( 'gs-slick-main-style' ), GUTENBERG_SECTIONS_VERSION, 'screen' );
 
     }
 
@@ -175,6 +177,11 @@ if( class_exists('ACF') && class_exists( 'acf_pro_updates' ) ) :
         // Plugin styles
         wp_enqueue_style( 'gs-section-defaults', plugin_dir_url( __FILE__ ) . 'css/editor-style.css', array(), GUTENBERG_SECTIONS_VERSION, 'screen' );
 
+        // Slick
+        wp_enqueue_script( 'gs-slick-main-script', plugin_dir_url( __FILE__ ) . 'slick/slick.min.js', array( 'jquery' ), GUTENBERG_SECTIONS_VERSION );
+        wp_enqueue_style( 'gs-slick-main-style', plugin_dir_url( __FILE__ ) . 'slick/slick.css', array(), GUTENBERG_SECTIONS_VERSION, 'screen' );
+        wp_enqueue_style( 'gs-slick-main-theme', plugin_dir_url( __FILE__ ) . 'slick/slick-theme.css', array( 'gs-slick-main-style' ), GUTENBERG_SECTIONS_VERSION, 'screen' );
+
     }
 
     /**
@@ -182,9 +189,8 @@ if( class_exists('ACF') && class_exists( 'acf_pro_updates' ) ) :
      */
     add_action( 'enqueue_block_assets', 'gs_enqueue_required' );
     function gs_enqueue_required() {
-
-        // silence is golden...
-        // 
+        
+    
     }
 
 endif; // the class check to make sure ACF exists

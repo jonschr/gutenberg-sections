@@ -1,0 +1,13 @@
+.gutenberg-section.slider {
+    .slider-wrap {
+        z-index: 20;
+        max-width: 100%;
+    }
+
+    .slide {
+        &:active,
+        &:focus {
+            outline: none;
+        }
+    }
+}
