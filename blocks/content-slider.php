@@ -38,11 +38,11 @@ if ( have_rows( 'slides' ) ) {
             jQuery(document).ready(function( $ ) {
 	
                 $('.<?php echo $id; ?> .slider-wrap').slick({
-                    dots: true,
+                    dots: false,
                     infinite: true,
-                    speed: 300,
-                    arrows: true,
-                    // fade: true,
+                    speed: 1000,
+                    arrows: false,
+                    fade: true,
                     cssEase: 'linear',
                 });
                 
@@ -62,17 +62,22 @@ printf( '<section id="%s" class="%s">', $id, $classes );
         while ( have_rows('slides') ) : the_row();
 
             // display a sub field value
-            echo '<div class="slide"><div class="content-wrap-outer"><div class="content-wrap">';
+            echo '<div class="slide">';
+                echo '<div class="content-wrap-outer">'; 
+                    echo '<div class="content-wrap">';
 
-                $content = get_sub_field( 'content' );
-                $background = get_sub_field('image');
+                        $content = get_sub_field( 'content' );
+                        $background = get_sub_field('image');
 
-                if ( $content ) {
-                    echo $content;
-                }       
+                        if ( $content ) {
+                            echo $content;
+                        }       
+
+                    echo '</div>'; // .content-wrap
+                echo '</div>'; // .content-wrap-outer
 
                 if ( $background ) {
-                    
+                        
                     // // testing
                     // echo '<pre>';
                     // print_r( $background );
@@ -80,13 +85,11 @@ printf( '<section id="%s" class="%s">', $id, $classes );
 
                     printf( '<div class="slide-background-image" style="background-image:url(%s);""></div>', $background['sizes']['section-background'] );
                 }
-                
 
                 // output the image itself
                 echo '<div class="slide-color-overlay"></div>';
-                
 
-            echo '</div></div></div>';
+            echo '</div>'; // .slide
 
         endwhile;
 
