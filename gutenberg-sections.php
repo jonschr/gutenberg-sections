@@ -106,7 +106,7 @@ if( class_exists('ACF') && class_exists( 'acf_pro_updates' ) ) :
 
     // Register the fields and set up the acf blocks
     require_once( 'field-registration/fullwidth.php' );
-    require_once( 'field-registration/slider.php' );
+    // require_once( 'field-registration/slider.php' );
     require_once( 'field-registration/twocolumn.php' );
     require_once( 'field-registration/checkerboard.php' );
     require_once( 'field-registration/featureditems.php' );
