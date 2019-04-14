@@ -2,6 +2,15 @@
    Includes
    ========================================================================== */
 
+.slick-slider {
+    opacity: 0;
+    transition: .3s opacity;
+
+    &.slick-initialized {
+        opacity: 1;
+    }
+}
+
 @import "mixins";
 
 @import "generic/page-container";

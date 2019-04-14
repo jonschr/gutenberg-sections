@@ -34,6 +34,21 @@ function gs_common_styles( $id ) {
 			}
 		}
 
+		/* Top and bottom padding for slides */
+		@media( min-width: 768px ) {
+			#<?php echo $id; ?> .slide {
+
+	        	<?php if ( get_field( 'padding_top' ) != '' ): ?>
+			    	padding-top: <?php the_field( 'padding_top' ); ?>px;
+			    <?php endif; ?>
+
+			    <?php if ( get_field( 'padding_bottom' ) != '' ): ?>
+			    	padding-bottom: <?php the_field( 'padding_bottom' ); ?>px;
+			    <?php endif; ?>
+
+			}
+		}
+
 		/* Top and bottom margins */
 		@media( min-width: 768px ) {
 			#<?php echo $id; ?> {

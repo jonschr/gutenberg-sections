@@ -13,5 +13,10 @@
         > .content-wrap {
             flex: 0 1 auto;
         }
+
+        //* If this is a slider section
+        .slide {
+            min-height: 100vh;
+        }
     }
 }
