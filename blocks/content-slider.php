@@ -40,7 +40,7 @@ if ( have_rows( 'slides' ) ) {
                 $('.<?php echo $id; ?> .slider-wrap').slick({
                     dots: false,
                     infinite: true,
-                    speed: 1000,
+                    speed: 250,
                     arrows: false,
                     fade: true,
                     cssEase: 'linear',
