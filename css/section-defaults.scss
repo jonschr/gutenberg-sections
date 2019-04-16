@@ -2,12 +2,12 @@
    Includes
    ========================================================================== */
 
-.slick-slider {
-    opacity: 0;
-    transition: .3s opacity;
+.slider-wrap {
+    opacity: 0 !important;
+    transition: .5s opacity;
 
     &.slick-initialized {
-        opacity: 1;
+        opacity: 1 !important;
     }
 }
 
