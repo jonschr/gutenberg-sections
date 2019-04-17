@@ -41,7 +41,7 @@ if ( have_rows( 'slides' ) ) {
                     dots: false,
                     infinite: true,
                     speed: 500,
-                    arrows: false,
+                    arrows: true,
                     fade: true,
                     waitForAnimate: false,
                     cssEase: 'linear',
