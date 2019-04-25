@@ -52,16 +52,16 @@ if( class_exists('ACF') && class_exists( 'acf_pro_updates' ) ) :
      * Temporary fix to Gutenberg bug
      * https://github.com/WordPress/gutenberg/issues/12530
      */
-    // remove_filter( 'the_content', 'wpautop' );
-    // add_filter( 'the_content', function ($content) {
+    remove_filter( 'the_content', 'wpautop' );
+    add_filter( 'the_content', function ($content) {
         
-    //     // bail if this has blocks
-    //     if (has_blocks() )
-    //         return $content;
+        // bail if this has blocks
+        if (has_blocks() )
+            return $content;
         
-    //     // apply the filter if it doesn't have blocks
-    //     return wpautop($content);
-    // });
+        // apply the filter if it doesn't have blocks
+        return wpautop($content);
+    });
 
     //////////////////////
     // COMMON FUNCTIONS //
