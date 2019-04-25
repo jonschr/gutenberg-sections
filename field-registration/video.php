@@ -98,6 +98,9 @@ add_action( 'video_add_sections', 'gs_add_default_color_heading', 40, 2 );
 // add_action( 'video_add_sections', 'gs_add_default_color', 45, 2 );
 add_action( 'video_add_sections', 'gs_add_video_color_fields', 45, 2 );
 
+// ID
+add_action( 'video_add_sections', 'gs_add_default_section_id_heading', 10, 2 );
+add_action( 'video_add_sections', 'gs_add_default_section_id', 10, 2 );
 
 function gs_add_video_content_heading( $key, $prefix ) {
 

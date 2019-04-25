@@ -31,6 +31,12 @@ $classes = 'twocolumn ' . $classes . ' ' . $horizontal_alignment . ' ' . $vertic
 // Section wrapper
 printf( '<section id="%s" class="%s">', $id, $classes );
 
+	// Output the anchor link
+	$anchor_id = get_field( 'section_id' );
+	if ( $anchor_id ) {
+		printf( '<div class="hidden-anchor" id="%s"></div>', $anchor_id );
+	}
+
 	echo '<div class="content-wrap">';
 
 		if ( $content_above )

@@ -28,7 +28,7 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'GUTENBERG_SECTIONS', dirname( __FILE__ ) );
 
 // Define the version of the plugin
-define ( 'GUTENBERG_SECTIONS_VERSION', '0.10.0' );
+define ( 'GUTENBERG_SECTIONS_VERSION', '0.10.1' );
 
 /**
  * Add a notification if ACF isn't installed and active
@@ -103,6 +103,7 @@ if( class_exists('ACF') && class_exists( 'acf_pro_updates' ) ) :
     require_once( 'field-registration/default_groups/default_layout.php' );
     require_once( 'field-registration/default_groups/default_color.php' );
     require_once( 'field-registration/default_groups/default_video.php' );
+    require_once( 'field-registration/default_groups/default_id.php' );
 
     // Register the fields and set up the acf blocks
     require_once( 'field-registration/fullwidth.php' );

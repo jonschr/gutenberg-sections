@@ -36,6 +36,12 @@ $image = get_field( 'image' );
 // Section wrapper
 printf( '<section id="%s" class="%s">', $id, $classes );
 
+	// Output the anchor link
+	$anchor_id = get_field( 'section_id' );
+	if ( $anchor_id ) {
+		printf( '<div class="hidden-anchor" id="%s"></div>', $anchor_id );
+	}
+
 	// Content area
 	echo '<div class="checkerboard-wrap">';
 		printf( '<div class="checkerboard-content column"><div class="checkerboard-content-wrap">%s</div></div>', $content );

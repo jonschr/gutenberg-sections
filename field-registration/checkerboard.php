@@ -111,6 +111,10 @@ add_action( 'checkerboard_add_sections', 'gs_add_default_color_field_text_color'
 // add_action( 'checkerboard_add_sections', 'gs_add_default_video_heading', 10, 2 );
 // add_action( 'checkerboard_add_sections', 'gs_add_default_video_heading', 10, 2 );
 
+// ID
+add_action( 'checkerboard_add_sections', 'gs_add_default_section_id_heading', 10, 2 );
+add_action( 'checkerboard_add_sections', 'gs_add_default_section_id', 10, 2 );
+
 ////////////////////////////////
 // CHECKERBOARD HEADING FIELD //
 ////////////////////////////////

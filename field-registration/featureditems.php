@@ -120,6 +120,10 @@ add_action( 'featureditems_add_sections', 'gs_add_default_video_image_fallback',
 add_action( 'featureditems_add_sections', 'gs_add_default_video_heading', 10, 2 );
 add_action( 'featureditems_add_sections', 'gs_add_default_video_heading', 10, 2 );
 
+// ID
+add_action( 'featureditems_add_sections', 'gs_add_default_section_id_heading', 10, 2 );
+add_action( 'featureditems_add_sections', 'gs_add_default_section_id', 10, 2 );
+
 ////////////////////////////////////
 // FEATURED ITEMS REPEATER FIELDS //
 ////////////////////////////////////

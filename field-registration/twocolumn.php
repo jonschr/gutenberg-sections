@@ -119,6 +119,10 @@ add_action( 'twocolumn_add_sections', 'gs_add_default_video_image_fallback', 10,
 add_action( 'twocolumn_add_sections', 'gs_add_default_video_heading', 10, 2 );
 add_action( 'twocolumn_add_sections', 'gs_add_default_video_heading', 10, 2 );
 
+// ID
+add_action( 'twocolumn_add_sections', 'gs_add_default_section_id_heading', 10, 2 );
+add_action( 'twocolumn_add_sections', 'gs_add_default_section_id', 10, 2 );
+
 ///////////////////////////////
 // TWO-COLUMN CONTENT FIELDS //
 ///////////////////////////////
