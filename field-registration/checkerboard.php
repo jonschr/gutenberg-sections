@@ -24,7 +24,7 @@ function init_checkerboard_block() {
             'align'             => 'full',
             'keywords'          => array( 'full', 'checkerboard', 'full-width', 'wrapper' ),
             'supports'          => array(
-                'align' =>  array( 'full' ),
+                'align' =>  array( 'full', 'wide' ),
             ),
         )
     );
