@@ -64,10 +64,18 @@
     }
 
     &.fullwidth-content-container-alignment {
+        @include notdesktop {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+
         .content-wrap-outer {
             max-width: 100%;
 
             .content-wrap {
+                width: inherit;
+                max-width: 100%;
                 padding-left: 0 !important;
                 padding-right: 0 !important;
             }

@@ -122,7 +122,7 @@
             .two-column-wrap {
                 align-items: flex-start;
 
-                :first-child {
+                > :first-child {
                     padding-top: 0;
                     margin-top: 0;
                 }
@@ -133,7 +133,7 @@
             .two-column-wrap {
                 align-items: flex-end;
 
-                :last-child {
+                > :last-child {
                     padding-bottom: 0;
                     margin-bottom: 0;
                 }
