@@ -14,7 +14,7 @@ function gs_common_classes( $block ) {
 	// ADVANCED CLASSES //
 	//////////////////////
 
-	if ( isset( $block['className'] ) )
+	if ( isset( $block['className'] ) && isset( $advanced_classes ) )
 		array_push( $classes, $advanced_classes );
 
 	///////////////
