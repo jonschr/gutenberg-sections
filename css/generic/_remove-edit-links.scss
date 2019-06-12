@@ -1,0 +1,7 @@
+.entry-content {
+    > .post-edit-link {
+        &:last-child {
+            display: none;
+        }
+    }
+}
