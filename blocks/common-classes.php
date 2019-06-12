@@ -55,6 +55,14 @@ function gs_common_classes( $block ) {
 	if ( $background_image )
 		array_push( $classes, 'has-background-image' );
 
+	//////////////////////
+	// BACKGROUND COLOR //
+	//////////////////////
+
+	$background_color = get_field( 'background_color' );
+	
+	if ( $background_color )
+		array_push( $classes, 'has-background-color' );
 
 	///////////////////////////////
 	// MAINTAIN BACKGROUND COLOR //
