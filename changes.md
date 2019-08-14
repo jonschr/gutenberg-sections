@@ -1,3 +1,7 @@
+#### 0.10.8 / 2019-08-14
+
+* Bugfix: alignment issue when a max-width is also set on a section
+
 #### 0.10.7 / 2019-06-12
 * Add a class for if there's a background color on a section, *.has-background-color*
 

@@ -115,11 +115,10 @@ function gs_common_styles( $id ) {
 			<?php if ( get_field( 'content_width' ) != '' ): ?>
 			    #<?php echo $id; ?> .content-wrap {
 					max-width: <?php the_field( 'content_width' ); ?>px;
-					
+					max-width: <?php the_field( 'content_width' ); ?>px;
 			    }
 
 				#<?php echo $id; ?> .content-wrap-outer {
-					max-width: <?php the_field( 'content_width' ); ?>px;
 					padding-left: 30px;
 					padding-right: 30px;
 			    }
