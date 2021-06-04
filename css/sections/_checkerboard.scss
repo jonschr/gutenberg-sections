@@ -3,9 +3,18 @@
    ========================================================================== */
 
 .gutenberg-section.checkerboard {
-    @extend .gutenberg-section.alignwide;
-
     padding: 0 !important;
+
+    @include notdesktop {
+        margin-left: calc(-100vw / 2 + 100% / 2);
+        margin-right: calc(-100vw / 2 + 100% / 2);
+        max-width: 100vw;
+    }
+
+    .content-wrap {
+        width: 702px;
+        max-width: 100%;
+    }
 
     .checkerboard-wrap {
         display: flex;
@@ -19,7 +28,6 @@
         @include mobile {
             flex-flow: column;
         }
-
 
         .checkerboard-image {
             background-position: center center;
@@ -39,7 +47,7 @@
                 flex: 0 1 auto;
                 width: 100%;
                 padding: 60px;
-                max-width: calc( 1060px / 2 - 60px );
+                max-width: calc(1060px / 2 - 60px);
 
                 @include notdesktop {
                     max-width: 100%;

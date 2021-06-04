@@ -1,5 +1,7 @@
-#### 0.10.8 / 2019-08-14
+#### 0.11.0 / 2021-06-03
+* Removing deprecated styles
 
+#### 0.10.8 / 2019-08-14
 * Bugfix: alignment issue when a max-width is also set on a section
 
 #### 0.10.7 / 2019-06-12
