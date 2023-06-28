@@ -7,7 +7,9 @@ function gs_output_background_video( $block ) {
 	$video_mp4 = get_field( 'video_mp4' );
 	$video_webm = get_field( 'video_webm' );
 	$image_fallback = get_field( 'image_fallback' );
-	$image_fallback_url = $image_fallback['url'];
+	
+	if ( isset( $image_fallback['url'] ) )
+		$image_fallback_url = $image_fallback['url'];
 
 	// Output the video background
 	if ( $video_url || $video_mp4 || $video_webm ) {

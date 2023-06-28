@@ -89,5 +89,5 @@ function gs_common_classes( $block ) {
 	// RETURN THE CLASSES //
 	////////////////////////
 
-	return implode( $classes, ' ' );
+	return implode( ' ', $classes );
 }
